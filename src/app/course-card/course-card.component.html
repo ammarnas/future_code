@@ -1,11 +1,11 @@
 <div class="course-card rounded text-center">
     <div class="fw-bold p-2 course-title">
-        {{title}}
+        {{course.title}}
     </div>
     <div>
-        <img src={{imageUrl}} alt="">
+        <img [src]="course.imageUrl" alt="">
     </div>
     <div class="course-description p-2 text-start">
-        {{description}}
+        {{course.description}}
     </div>
 </div>

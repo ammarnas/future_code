@@ -14,9 +14,9 @@
 <div class="container-fluid">
   <div class="row mt-2">
     <div class="col-md-4 col-12">
-      <app-course-card [title]="course[0].title" [imageUrl]="course[0].imageUrl" [description]="course[0].description"></app-course-card>
-      <app-course-card [title]="course[1].title" [imageUrl]="course[1].imageUrl" [description]="course[1].description"></app-course-card>
-      <app-course-card [title]="'development of various forms'"  [imageUrl]="'https://picsum.photos/id/654/200/200'" [description]="'Thus further development of various forms of activity directly depends on the system of mass participation. The significance of such problems is so obvious that the implementation of the planned tasks requires the clarification of forms of influence. Thus the established organization structure allows to complete important implementation tasks of forms of influence.'"></app-course-card>
+      <app-course-card [course]="course[0]"></app-course-card>
+      <app-course-card [course]="course[1]"></app-course-card>
+      <app-course-card [course]="course[2]"></app-course-card>
     </div>
   </div>
 </div>
