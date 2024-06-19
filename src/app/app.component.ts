@@ -9,5 +9,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'future_code';
+  data = {
+    title: 'future_code'
+  };
+
+  onLogoClick(): void{
+    alert('hello world')
+  }
+
+  onKeyUp(title: string): void {
+    this.data.title = title;
+  }
 }
