@@ -51,4 +51,8 @@ course: Array<ICourse> = [
   onKeyUp(title: string): void {
     this.data.title = title;
   }
+
+  onCourseClicked(course: ICourse): void {
+    console.log('on Course Clicked',course.description);
+  }
 }

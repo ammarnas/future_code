@@ -14,9 +14,9 @@
 <div class="container-fluid">
   <div class="row mt-2">
     <div class="col-md-4 col-12">
-      <app-course-card [course]="course[0]"></app-course-card>
-      <app-course-card [course]="course[1]"></app-course-card>
-      <app-course-card [course]="course[2]"></app-course-card>
+      <app-course-card (viewCourseEvent)="onCourseClicked($event)" [course]="course[0]"></app-course-card>
+      <app-course-card (viewCourseEvent)="onCourseClicked($event)" [course]="course[1]"></app-course-card>
+      <app-course-card (viewCourseEvent)="onCourseClicked($event)" [course]="course[2]"></app-course-card>
     </div>
   </div>
 </div>
