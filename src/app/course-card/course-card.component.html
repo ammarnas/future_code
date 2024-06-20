@@ -1,10 +1,9 @@
 <div class="course-card rounded text-center text-center my-2"
-    [ngClass]="'beginner fakeClass'">
-    <div class="fw-bold p-2 course-title"
-    [ngClass]="['arrayOfClasses','fakeClass']">
+    [ngClass]="{'beginner': course.category === categoryType.beginners}">
+    <div class="fw-bold p-2 course-title">
         {{index}}- {{course.title}}
     </div>
-        <div [ngClass]="{'beginner': false, 'ngClassAsObject': true}">
+        <div>
             <img [src]="course.imageUrl" alt="image-course" class="w100 course-image">
         </div>
     <div class="course-description p-2 text-start">
