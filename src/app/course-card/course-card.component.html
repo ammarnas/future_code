@@ -2,9 +2,13 @@
     <div class="fw-bold p-2 course-title">
         {{index}}- {{course.title}}
     </div>
-    <div>
-        <img [src]="course.imageUrl" alt="">
-    </div>
+    @if (course.imageUrl) {
+        <div>
+            <img [src]="course.imageUrl" alt="image-course" class="w100 course-image">
+        </div>
+    } @else {
+        <h5>No Image Available </h5>
+    }
     <div class="course-description p-2 text-start">
         {{course.description}}
     </div>

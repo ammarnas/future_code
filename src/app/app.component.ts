@@ -42,6 +42,15 @@ export class AppComponent {
     category: 2,
     longDescription: '',
     imageUrl: 'https://picsum.photos/id/686/200/200',
+  },
+  {
+    id: 4,
+    title: 'Course With no image',
+    description:'Likewise hi-tech concept of the social system allows to appreciate the value of economic practicability of decisions made. The significance of such problems is so obvious that the innovational path that we have chosen directly depends on strengthening the democratic system.',
+    lessonsCount: 33,
+    category: 2,
+    longDescription: '',
+    imageUrl: '',
   }
 ];
   onLogoClick(): void{
