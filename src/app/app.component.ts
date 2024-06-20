@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { ICourse } from './app.component.models';
+import { NgForOf } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CourseCardComponent]
+    imports: [RouterOutlet, CourseCardComponent, NgForOf]
 })
 export class AppComponent {
   data = {
