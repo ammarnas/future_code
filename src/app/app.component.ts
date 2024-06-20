@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { ICourse } from './app.component.models';
-import { NgForOf } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CourseCardComponent, NgForOf]
+    imports: [RouterOutlet, CourseCardComponent]
 })
 export class AppComponent {
   data = {
@@ -41,7 +40,7 @@ export class AppComponent {
     lessonsCount: 33,
     category: 2,
     longDescription: '',
-    imageUrl: 'https://picsum.photos/id/686/200/200',
+    imageUrl: 'https://picsum.photos/id/557/200/200',
   },
   {
     id: 4,
@@ -50,7 +49,7 @@ export class AppComponent {
     lessonsCount: 33,
     category: 2,
     longDescription: '',
-    imageUrl: '',
+    imageUrl: 'https://picsum.photos/id/556/200/200',
   }
 ];
   onLogoClick(): void{
