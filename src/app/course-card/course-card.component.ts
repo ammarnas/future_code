@@ -10,6 +10,7 @@ import { ICourse } from '../app.component.models';
 })
 export class CourseCardComponent {
   @Input({required: true}) course: ICourse = {} as ICourse;
+  @Input({required: true}) index!: number;
   @Output() viewCourseEvent = new EventEmitter<ICourse>();
 
   viewCourse(): void {
