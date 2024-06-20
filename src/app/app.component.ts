@@ -54,4 +54,8 @@ export class AppComponent {
   onCourseClicked(course: ICourse): void {
     console.log('on Course Clicked',course.description);
   }
+
+  trackCourse(index: number, course: ICourse): number {
+    return course.id;
+  }
 }
