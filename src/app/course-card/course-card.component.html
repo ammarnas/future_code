@@ -1,7 +1,8 @@
-<!--  we can use it with one class -->
+<!-- the best to use ngClass instead of ngStyle -->
 <div class="course-card rounded text-center text-center my-2"
-    [class.beginner]="course.category === categoryType.beginners">
-    <div class="fw-bold p-2 course-title">
+    [ngClass]="course.category === categoryType.beginners ? 'beginner' : 'advanced'">
+    <div class="fw-bold p-2 course-title"
+    [ngStyle]="{'color': course.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
         {{index}}- {{course.title}}
     </div>
         <div>
