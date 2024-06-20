@@ -13,15 +13,12 @@
 </div> -->
 <div class="container-fluid">
   <div class="row mt-2">
-    @for (course of courses; track course.id; let index = $index;
-    let count = $count;
-    let first = $first;let last = $last;
-    let even  = $even; let odd = $odd) {
-      <h1>Courses Count : {{count}}</h1>
+    @for (course of courses; track course.id;) {
+      <h1>Courses Count : {{$count}}</h1>
       <div class="col-md-4 col-12">
-        <app-course-card  [index]="index" [course]="course"
-            [class.first-course]="first" [class.last-course]="last"
-            [class.even-course]="even" [class.odd-course]="odd"
+        <app-course-card  [index]="$index" [course]="course"
+            [class.first-course]="$first" [class.last-course]="$last"
+            [class.even-course]="$even" [class.odd-course]="$odd"
           (viewCourseEvent)="onCourseClicked($event)"/>
       </div>
     } @empty {
