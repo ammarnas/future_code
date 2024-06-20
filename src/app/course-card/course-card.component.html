@@ -1,5 +1,6 @@
+<!--  we can use it with one class -->
 <div class="course-card rounded text-center text-center my-2"
-    [ngClass]="course.category === categoryType.beginners ? 'beginner' : 'advanced'">
+    [class.beginner]="course.category === categoryType.beginners">
     <div class="fw-bold p-2 course-title">
         {{index}}- {{course.title}}
     </div>
