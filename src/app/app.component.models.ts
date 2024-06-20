@@ -9,5 +9,7 @@ export interface ICourse {
 }
 export enum CategoryType {
     beginners = 1,
-    advanced = 2
+    intermediate = 2,
+    advanced = 3,
+    other
 }

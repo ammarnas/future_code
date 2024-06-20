@@ -29,7 +29,7 @@ export class AppComponent {
     title: 'Rxjs',
     description:'However, one should not forget the innovational path that we have chosen contributes to the preparing and implementation of further ways of development. On the other hand constant quantitive growth and the scope of our activity requires the clarification of the system of mass participation. On the other hand further development of various forms of activity contributes to increasing the quality of existing financial and administrative conditions.',
     lessonsCount: 25,
-    category: CategoryType.advanced,
+    category: CategoryType.intermediate,
     longDescription: '',
     imageUrl: 'https://picsum.photos/id/685/200/200',
   },
@@ -47,7 +47,7 @@ export class AppComponent {
     title: 'Course With no image',
     description:'Likewise hi-tech concept of the social system allows to appreciate the value of economic practicability of decisions made. The significance of such problems is so obvious that the innovational path that we have chosen directly depends on strengthening the democratic system.',
     lessonsCount: 33,
-    category: CategoryType.beginners,
+    category: CategoryType.other,
     longDescription: '',
     imageUrl: 'https://picsum.photos/id/556/200/200',
   }

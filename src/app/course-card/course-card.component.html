@@ -11,6 +11,20 @@
     <div class="course-description p-2 text-start">
         {{course.description}}
     </div>
+    @switch (course.category) {
+        @case (categoryType.beginners) {
+            <span class="badge bg-warning"> Beginner </span>
+        }
+        @case (categoryType.intermediate) {
+            <span class="badge bg-info"> Intermediate </span>
+        }
+        @case (categoryType.advanced) {
+            <span class="badge bg-secondary"> Advanced </span>
+        }
+        @default {
+            <span class="badge bg-danger"> Other </span>
+        }
+    }
     <div class="p-2">
         <button class="btn btn-primary" (click)="viewCourse()">View Details</button>
     </div>
