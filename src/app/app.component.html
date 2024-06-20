@@ -17,6 +17,8 @@
       <div class="col-md-4 col-12">
         <app-course-card (viewCourseEvent)="onCourseClicked($event)" [course]="course" />
       </div>
+    } @empty {
+      <h1>No Courses Found!</h1>
     }
   </div>
 </div>
