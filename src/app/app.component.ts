@@ -17,7 +17,7 @@ export class AppComponent {
     title: 'Angular For Beginners In Arabic',
   };
 
-  date = new Date();
+  amount = 45.27578583;
 
   courses: Array<ICourse> = [
   {
