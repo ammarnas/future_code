@@ -2,18 +2,22 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { CategoryType, ICourse } from './app.component.models';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CourseCardComponent]
+    imports: [RouterOutlet, CourseCardComponent, CommonModule]
 })
 export class AppComponent {
   data = {
-    title: 'future_code'
+    courseName: 'Angular Core Course!',
+    title: 'Angular For Beginners In Arabic',
   };
+
+
   courses: Array<ICourse> = [
   {
     id: 1,

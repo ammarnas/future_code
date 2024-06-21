@@ -8,9 +8,11 @@
     <img src="https://picsum.photos/id/684/100/100" alt="image" loading="lazy" (click)="onLogoClick()">
   </div>
 </div>
-<!-- <div class="p-3">
-  <input type="text" [value]="data.title" class="demo" #inputRrf (keyup)="onKeyUp(inputRrf.value)">
-</div> -->
+
+<h4>{{ data.courseName | lowercase }}</h4>
+<h4>{{ data.courseName | uppercase }}</h4>
+<h4>{{ data.courseName | titlecase }}</h4>
+
 <div class="container-fluid">
   <div class="row mt-2">
     <!-- we can track by object value "track course" 
