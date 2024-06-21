@@ -17,9 +17,6 @@ export class AppComponent {
     title: 'Angular For Beginners In Arabic',
   };
 
-  total = 0.456;
-  price = 352;
-
   courses: Array<ICourse> = [
   {
     id: 1,

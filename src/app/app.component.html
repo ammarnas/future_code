@@ -9,12 +9,10 @@
   </div>
 </div>
 
-<h4>Percent: {{ total | percent }}</h4>                   <!-- 46% --> 
-<h4>Currency: {{ price | currency  }}</h4>                          <!-- $352.00 --> 
-<h4>Currency: {{ price | currency:'CAD' }}</h4>                     <!-- CA$352.00 --> 
-<h4>Currency: {{ price | currency:'CAD' : 'symbol' }}</h4>          <!-- CA$352.00 --> 
-<h4>Currency: {{ price | currency:'CAD' : 'code' }}</h4>            <!-- CAD352.00 --> 
-<h4>Currency: {{ price | currency:'CAD' : 'symbol-narrow'  }}</h4>  <!-- $352.00 --> 
+<h4>Slice: {{ data.courseName }}</h4>                   <!-- Angular Core Course! --> 
+<h4>Slice: {{ data.courseName | slice: 0:7}}</h4>                 <!-- Angular --> 
+<h4>Slice: {{ data.courseName | slice: 7}}</h4>                   <!-- Core Course! --> 
+<h4>Slice: {{ data.courseName | slice: -7}}</h4>                  <!--  Course! --> 
 
 <div class="container-fluid">
   <div class="row mt-2">
@@ -22,7 +20,7 @@
       or by index "track $index"
       and all we can used with method -->
 
-    @for (course of courses; track trackCourse;) {
+    @for (course of courses | slice: 0:2; track trackCourse;) {
       <h1>Courses Count : {{$count}}</h1>
       <div class="col-md-4 col-12">
         <app-course-card  [index]="$index" [course]="course"
