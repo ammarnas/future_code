@@ -9,9 +9,11 @@
   </div>
 </div>
 
-<h4>{{ data.courseName | lowercase }}</h4>
-<h4>{{ data.courseName | uppercase }}</h4>
-<h4>{{ data.courseName | titlecase }}</h4>
+<h4>Today: {{ date }}</h4>           <!-- Fri Jun 21 2024 19:40:10 GMT+0300 (Arabian Standard Time) -->
+<h4>Today: {{ date | date }}</h4>           <!-- Jun 21, 2024 -->
+<h4>Today: {{ date | date:'full' }}</h4>    <!-- Friday, June 21, 2024 at 7:37:23 PM GMT+03:00  -->
+<h4>Today: {{ date | date:'MM-dd-yy' }}</h4>    <!-- 06-21-24  -->
+<h4>Today: {{ date | date:'MMM/dd/yyyy' }}</h4>    <!-- Jun/21/2024 -->
 
 <div class="container-fluid">
   <div class="row mt-2">
