@@ -9,7 +9,13 @@
   </div>
 </div>
 
-<h4>Json: {{ data | json }}</h4>                   <!-- Angular Core Course! --> 
+<h4>Keyvalue: </h4>
+@for (course of courses[3] | keyvalue; track course) {
+  <div>
+    Key: <strong>{{course.key}}</strong>
+    Value: <strong>{{course.value}}</strong>
+  </div>
+}
 
 <div class="container-fluid">
   <div class="row mt-2">
