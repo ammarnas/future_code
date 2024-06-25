@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { CategoryType, ICourse } from './app.component.models';
 import { CommonModule } from '@angular/common';
+import { timer } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, CourseCardComponent, CommonModule]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   data = {
     courseName: 'Angular Core Course!',
     title: 'Angular For Beginners In Arabic',
@@ -69,5 +70,10 @@ export class AppComponent {
 
   trackCourse(index: number, course: ICourse): number {
     return course.id;
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    timer(3000).subscribe(() => this.data.title = 'OnChanges Hook');
   }
 }

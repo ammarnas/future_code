@@ -3,6 +3,7 @@
     [ngClass]="course.category === categoryType.beginners ? 'beginner' : 'advanced'">
     <div class="fw-bold p-2 course-title"
     [ngStyle]="{'color': course.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
+        <h4 class="text-danger">{{title}}</h4>
         {{index}}- {{course.title}}
     </div>
         <div>

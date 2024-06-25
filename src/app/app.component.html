@@ -9,14 +9,6 @@
   </div>
 </div>
 
-<h4>Keyvalue: </h4>
-@for (course of courses[3] | keyvalue; track course) {
-  <div>
-    Key: <strong>{{course.key}}</strong>
-    Value: <strong>{{course.value}}</strong>
-  </div>
-}
-
 <div class="container-fluid">
   <div class="row mt-2">
     <!-- we can track by object value "track course" 
@@ -27,8 +19,7 @@
       <h1>Courses Count : {{$count}}</h1>
       <div class="col-md-4 col-12">
         <app-course-card  [index]="$index" [course]="course"
-            [class.first-course]="$first" [class.last-course]="$last"
-            [class.even-course]="$even" [class.odd-course]="$odd"
+          [title]="data.title"
           (viewCourseEvent)="onCourseClicked($event)"/>
       </div>
     } @empty {
