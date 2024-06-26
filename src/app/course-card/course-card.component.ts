@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CategoryType, ICourse } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 
@@ -9,7 +9,7 @@ import { NgClass, NgStyle} from '@angular/common';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.scss'
 })
-export class CourseCardComponent implements OnChanges, OnInit {
+export class CourseCardComponent implements OnChanges, OnInit, DoCheck {
   @Input({required: true}) course: ICourse = {} as ICourse;
   @Input({required: true}) index!: number;
   @Input({required: true}) title!: string;
@@ -29,6 +29,12 @@ export class CourseCardComponent implements OnChanges, OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     console.log('ngOnInit', this.course.id);
-        
+  }
+
+  ngDoCheck(): void {
+    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+    //Called After OnInit and after every change 'OnChange' that mean at least it called twice.
+    //Called also on every change on the component.
+    console.log(`%c ngDoCheck ${this.course.id}`,'color: purple')
   }
 }
