@@ -5,6 +5,9 @@
     [ngStyle]="{'color': course.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
         <h4 class="text-danger">{{title}}</h4>
         {{index}}- {{course.title}}
+        <div>
+            <ng-content />
+        </div>
     </div>
         <div>
             <img [src]="course.imageUrl" alt="image-course" class="w100 course-image">

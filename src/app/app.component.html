@@ -20,7 +20,14 @@
       <div class="col-md-4 col-12">
         <app-course-card  [index]="$index" [course]="course"
           [title]="data.title"
-          (viewCourseEvent)="onCourseClicked($event)"/>
+          (viewCourseEvent)="onCourseClicked($event)">
+          <!--
+            angular content projection: let component to import content form other component  
+            we can't use it with self close component
+            this text below will not appear until we add ng-content
+          -->
+          {{ 'angular content projection' | titlecase }}
+        </app-course-card>
       </div>
     } @empty {
       <h1>No Courses Found!</h1>
