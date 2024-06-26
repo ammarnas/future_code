@@ -1,4 +1,4 @@
-import { Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { AfterContentInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CategoryType, ICourse } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 
@@ -9,7 +9,7 @@ import { NgClass, NgStyle} from '@angular/common';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.scss'
 })
-export class CourseCardComponent implements OnChanges, OnInit, DoCheck {
+export class CourseCardComponent implements OnChanges, OnInit, DoCheck, AfterContentInit {
   @Input({required: true}) course: ICourse = {} as ICourse;
   @Input({required: true}) index!: number;
   @Input({required: true}) title!: string;
@@ -36,5 +36,12 @@ export class CourseCardComponent implements OnChanges, OnInit, DoCheck {
     //Called After OnInit and after every change 'OnChange' that mean at least it called twice.
     //Called also on every change on the component.
     console.log(`%c ngDoCheck ${this.course.id}`,'color: purple')
+  }
+
+  ngAfterContentInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Called after ng-content init and after DoCheck
+    //Called just one time, not after every DoCheck
+    console.log(`%c ngAfterContentInit ${this.course.id}`,'color: orange')
   }
 }
