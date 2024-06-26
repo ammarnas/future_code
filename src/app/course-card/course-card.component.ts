@@ -22,13 +22,13 @@ export class CourseCardComponent implements OnChanges, OnInit, DoCheck {
 
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    console.log('ngOnChange', this.course.id);
+    console.log(`%c ngOnChanges ${this.course.id}`,'color: red');
     
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    console.log('ngOnInit', this.course.id);
+    console.log(`%c ngOnInit ${this.course.id}`,'color: blue');
   }
 
   ngDoCheck(): void {

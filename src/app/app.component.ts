@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    console.log('Parent ngOnInit');
+    console.log('%c Parent ngOnInit','color: green');
     timer(3000).subscribe(() => this.data.title = 'OnChanges Hook');
   }
 }
