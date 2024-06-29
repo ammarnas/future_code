@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
 import { CategoryType, ICourse } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 import { ChildViewComponent } from '../child-view/child-view.component';
@@ -10,7 +10,7 @@ import { ChildViewComponent } from '../child-view/child-view.component';
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.scss'
 })
-export class CourseCardComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit {
+export class CourseCardComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   @Input({required: true}) course: ICourse = {} as ICourse;
   @Input({required: true}) index!: number;
   @Input({required: true}) title!: string;
@@ -57,5 +57,10 @@ export class CourseCardComponent implements OnChanges, OnInit, DoCheck, AfterCon
     //Called just one time.
     //Before this the ${this.childViewComponent} is undefined in here will be define and can access it.
     console.log(`%c ngAfterViewInit ${this.course.id} - ${this.childViewComponent.text}`,'color: gold')
+  }
+  ngAfterViewChecked(): void {
+    //Called after every check of the component's view. Applies to components only.
+    //Called AfterViewInit and after every AfterContentChecked
+    console.log(`%c ngAfterViewChecked ${this.course.id} - ${this.childViewComponent.text}`,'color: brown')
   }
 }
