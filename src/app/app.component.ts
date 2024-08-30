@@ -4,13 +4,14 @@ import { CourseCardComponent } from "./course-card/course-card.component";
 import { CategoryType, ICourse } from './app.component.models';
 import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
+import { HeaderComponent } from "./header/header.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CourseCardComponent, CommonModule]
+    imports: [RouterOutlet, CourseCardComponent, CommonModule, HeaderComponent]
 })
 export class AppComponent implements OnInit {
   data = {
