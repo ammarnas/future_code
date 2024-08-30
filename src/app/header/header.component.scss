@@ -1,0 +1,23 @@
+.channel-name {
+  background-color: #000;
+}
+.active {
+  background: rgb(39, 39, 39);
+  border-radius: 2px;
+}
+.nav-link:hover {
+  background: rgb(39, 39, 39);
+}
+.header {
+  background-color: #000;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  right: 0;
+  left: 0;
+  padding: 0.5rem;
+  z-index: 2;
+}
