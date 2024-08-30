@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -13,4 +13,13 @@ export class HeaderComponent {
     lessonName: 'Angular For Beginners In Arabic',
   };
   isNavbarSticky = false;
+
+  @HostListener('window:scroll',['$event']) onScroll(){
+    if(window.scrollY > 50){
+      this.isNavbarSticky = true;
+    }
+    else{
+      this.isNavbarSticky = false;
+    }
+  }
 }
