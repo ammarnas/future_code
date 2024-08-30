@@ -12,14 +12,14 @@ export class HeaderComponent {
     courseName: 'Angular Core Course!',
     lessonName: 'Angular For Beginners In Arabic',
   };
-  isNavbarSticky = false;
+  isNavbarFixed = false;
 
   @HostListener('window:scroll',['$event']) onScroll(){
     if(window.scrollY > 50){
-      this.isNavbarSticky = true;
+      this.isNavbarFixed = true;
     }
     else{
-      this.isNavbarSticky = false;
+      this.isNavbarFixed = false;
     }
   }
 }
