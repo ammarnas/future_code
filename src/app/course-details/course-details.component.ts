@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICourse } from '../app.component.models';
 
 @Component({
   selector: 'app-course-details',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './course-details.component.scss'
 })
 export class CourseDetailsComponent {
-
+  course!: ICourse;
 }
