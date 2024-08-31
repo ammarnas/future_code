@@ -1,7 +1,8 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, viewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CategoryType, ICourse } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 import { ChildViewComponent } from '../child-view/child-view.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-card',
@@ -14,6 +15,8 @@ export class CourseCardComponent {
   @Input({required: true}) course: ICourse = {} as ICourse;
   categoryType = CategoryType;
 
+  constructor(private router: Router) {
+  }
   get backgroundColor(): string {
     const defaultColor = "#fa7901";
     if(this.course) {
@@ -32,5 +35,7 @@ export class CourseCardComponent {
       return defaultColor;
     }
   }
-  viewCourse(): void {}
+  viewCourse(): void {
+    this.router.navigateByUrl(`course-details/${this.course.id}`);
+  }
 }
