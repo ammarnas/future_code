@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ICourse } from '../app.component.models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-details',
@@ -11,8 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CourseDetailsComponent {
   course!: ICourse;
-
-  constructor(private activatedRoute: ActivatedRoute){}
+  index: number = 1;
+  constructor(private activatedRoute: ActivatedRoute, private router: Router){}
 
 // Note:
 // 1- Not recommend it
@@ -26,5 +26,16 @@ export class CourseDetailsComponent {
   const courseId = this.activatedRoute.snapshot.paramMap.get('id');
   console.log('snapshot paramMap', courseId);
 
+  this.activatedRoute.params.subscribe((res: Params) => {
+    console.log('params ', res['id']);
+  })
+
+  this.activatedRoute.paramMap.subscribe((res: ParamMap) => {
+    console.log('paramMap ', res.get('id'));
+  })
+  }
+
+  getNext(){
+    this.router.navigate([`course-details`,this.index++]);
   }
 }
