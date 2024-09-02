@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { ICourse } from '../app.component.models';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
@@ -12,6 +12,10 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 export class CourseDetailsComponent {
   course!: ICourse;
   index: number = 1;
+  // should be the same name in router
+  // and use withComponentInputBinding in app.Config
+  // don't make bind for changes
+  @Input() id: string = '';
   constructor(private activatedRoute: ActivatedRoute, private router: Router){}
 
 // Note:
@@ -33,6 +37,8 @@ export class CourseDetailsComponent {
   this.activatedRoute.paramMap.subscribe((res: ParamMap) => {
     console.log('paramMap ', res.get('id'));
   })
+
+  console.log('id', this.id);
   }
 
   getNext(){
