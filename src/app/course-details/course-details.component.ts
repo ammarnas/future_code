@@ -42,6 +42,6 @@ export class CourseDetailsComponent {
   }
 
   getNext(){
-    this.router.navigate([`course-details`,this.index++]);
+    this.router.navigate([`course-list`,this.index++]);
   }
 }

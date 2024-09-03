@@ -36,6 +36,6 @@ export class CourseCardComponent {
     }
   }
   viewCourse(): void {
-    this.router.navigateByUrl(`course-details/${this.course.id}`);
+    this.router.navigateByUrl(`course-list/${this.course.id}`);
   }
 }
