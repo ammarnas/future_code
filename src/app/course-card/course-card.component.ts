@@ -36,6 +36,8 @@ export class CourseCardComponent {
     }
   }
   viewCourse(): void {
-    this.router.navigateByUrl(`course-list/${this.course.id}`);
+    // this.router.navigateByUrl(`course-list/${this.course.id}`);
+
+    this.router.navigate(["course", {queryParams: {id: 5, name: "Test"}}]);
   }
 }

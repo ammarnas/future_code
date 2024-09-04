@@ -15,7 +15,7 @@ export class CourseDetailsComponent {
   // should be the same name in router
   // and use withComponentInputBinding in app.Config
   // don't make bind for changes
-  @Input() id: string = '';
+  @Input('id') courseId: string = ''; // this binding from route
   constructor(private activatedRoute: ActivatedRoute, private router: Router){}
 
 // Note:
@@ -38,10 +38,14 @@ export class CourseDetailsComponent {
     console.log('paramMap ', res.get('id'));
   })
 
-  console.log('id', this.id);
+  console.log('id', this.courseId);
   }
 
   getNext(){
     this.router.navigate([`course-list`,this.index++]);
   }
+
+  // getCourse(courseId: number): ICourse {
+  //   return this.courses.find(c => c.id === courseId);
+  // }
 }

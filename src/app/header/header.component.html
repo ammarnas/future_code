@@ -22,9 +22,17 @@
         <li class="d-flex">
           <a class="nav-link d-flex p-0">
             <span class="nav-link-inner" [routerLink]="['/course-list', 1]" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Course details</span>
+            [routerLinkActiveOptions]="{exact: true}">Beginner</span>
           </a>
         </li>
+
+        <li class="d-flex">
+          <a class="nav-link d-flex p-0">
+            <span class="nav-link-inner" [routerLink]="['/course-list', 1]" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" [queryParams]="{id: 2}">Rxjs</span>
+          </a>
+        </li>
+
       </ul>
     </nav>
   </div>
