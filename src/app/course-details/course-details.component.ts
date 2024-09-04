@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { ICourse } from '../app.component.models';
+import { courses, ICourse } from '../app.component.models';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,6 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 })
 export class CourseDetailsComponent {
   course!: ICourse;
-  index: number = 1;
   // should be the same name in router
   // and use withComponentInputBinding in app.Config
   // don't make bind for changes
@@ -22,30 +21,45 @@ export class CourseDetailsComponent {
 // 1- Not recommend it
 // 2- Not detect the changes of the route
   ngOnInit() {
-  // first static way
-  const id = this.activatedRoute.snapshot.params['id'];
-  console.log('snapshot params', id);
+  // // first static way
+  // const id = this.activatedRoute.snapshot.params['id'];
+  // console.log('snapshot params', id);
 
-  // second static way
-  const courseId = this.activatedRoute.snapshot.paramMap.get('id');
-  console.log('snapshot paramMap', courseId);
+  // // second static way
+  // const courseId = this.activatedRoute.snapshot.paramMap.get('id');
+  // console.log('snapshot paramMap', courseId);
 
-  this.activatedRoute.params.subscribe((res: Params) => {
-    console.log('params ', res['id']);
+  // this.activatedRoute.params.subscribe((res: Params) => {
+  //   console.log('params ', res['id']);
+  // })
+
+  // this.activatedRoute.paramMap.subscribe((res: ParamMap) => {
+  //   console.log('paramMap ', res.get('id'));
+  // })
+
+  // console.log('id', this.courseId);
+
+  this.activatedRoute.queryParams.subscribe(res => {
+    console.log('queryParams', res['id']);
   })
 
-  this.activatedRoute.paramMap.subscribe((res: ParamMap) => {
-    console.log('paramMap ', res.get('id'));
+  this.activatedRoute.queryParamMap.subscribe(res => {
+    console.log("queryParamMap", res.get('id'));
+    const id = Number(res.get('id'));
+    // this.course = this.getCourse(id);
   })
-
-  console.log('id', this.courseId);
   }
 
   getNext(){
-    this.router.navigate([`course-list`,this.index++]);
+    this.router.navigate([`course`, {queryParams: {id: this.course.id + 1}}]);
+  }
+
+  goToHome(){
+    this.router.navigate([`home`, {queryParams: {id: this.course.id + 1}}]);
   }
 
   // getCourse(courseId: number): ICourse {
-  //   return this.courses.find(c => c.id === courseId);
+  //   return courses.find(c => c.id === courseId);
   // }
+
 }
