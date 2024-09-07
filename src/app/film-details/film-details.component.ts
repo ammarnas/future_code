@@ -9,7 +9,7 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
   templateUrl: './film-details.component.html',
   styleUrl: './film-details.component.scss'
 })
-export class filmDetailsComponent {
+export class FilmDetailsComponent {
   film!: IFilm;
   // should be the same name in router
   // and use withComponentInputBinding in app.Config
