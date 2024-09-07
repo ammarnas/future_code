@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
 import { FilmCardComponent } from './film-card/film-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, FilmCardComponent, CommonModule, HeaderComponent]
+    imports: [RouterOutlet, FilmCardComponent, CommonModule, HeaderComponent, HttpClientModule]
 })
 export class AppComponent implements OnInit {
   data = {

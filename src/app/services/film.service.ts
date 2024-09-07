@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { IFilm } from '../app.component.models';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { baseURL } from '../../environment/environment';
 @Injectable({
   providedIn: 'root'
@@ -9,8 +9,10 @@ import { baseURL } from '../../environment/environment';
 export class FilmService {
   http = inject(HttpClient);
 
-  getFilmList(): Observable<IFilm[]> {
-    return this.http.get<IFilm[]>(`${baseURL}films`);
+  getFilms(): Observable<any[]> {
+    console.log(`${baseURL}films`);
+    return this.http.get<any>(`${baseURL}films/`).pipe(
+      map(response => response.results));
   }
 
 }
