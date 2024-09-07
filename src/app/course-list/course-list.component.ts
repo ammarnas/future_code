@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { Ifilm } from '../app.component.models';
+import { IFilm } from '../app.component.models';
 import { filmService } from '../services/film.service';
-import { filmCardComponent } from "../film-card/film-card.component";
+import { FilmCardComponent } from "../film-card/film-card.component";
 
 @Component({
   selector: 'app-film-list',
   standalone: true,
-  imports: [filmCardComponent],
+  imports: [FilmCardComponent],
   templateUrl: './film-list.component.html',
   styleUrl: './film-list.component.scss'
 })
 export class filmListComponent {
-  films: Array<Ifilm> = [];
+  films: Array<IFilm> = [];
 
   // //Method 1
   // constructor(private filmService: filmService){

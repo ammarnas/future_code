@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { filmCardComponent } from "./film-card/film-card.component";
-import { CategoryType, Ifilm } from './app.component.models';
+import { FilmCardComponent } from "./film-card/film-card.component";
+import { CategoryType, IFilm } from './app.component.models';
 import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
@@ -11,7 +11,7 @@ import { HeaderComponent } from "./header/header.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, filmCardComponent, CommonModule, HeaderComponent]
+    imports: [RouterOutlet, FilmCardComponent, CommonModule, HeaderComponent]
 })
 export class AppComponent implements OnInit {
   data = {
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     title: 'Angular For Beginners In Arabic',
   };
 
-  films: Array<Ifilm> = [
+  films: Array<IFilm> = [
   {
     id: 1,
     title: 'Angular For Beginners',
@@ -65,11 +65,11 @@ export class AppComponent implements OnInit {
     this.data.title = title;
   }
 
-  onfilmClicked(film: Ifilm): void {
+  onfilmClicked(film: IFilm): void {
     console.log('on film Clicked',film.description);
   }
 
-  trackfilm(index: number, film: Ifilm): number {
+  trackfilm(index: number, film: IFilm): number {
     return film.id;
   }
 

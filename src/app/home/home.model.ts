@@ -1,13 +1,13 @@
 // home.model.ts
 
-export interface IfilmVM {
+export interface IFilmVM {
   id: number;         // Change id to number
   name: string;
   description: string;
   icon: string;       // New icon property for FontAwesome icon codes
 }
 
-export const films: IfilmVM[] = [
+export const films: IFilmVM[] = [
   { id: 1, name: 'Angular Basics', description: 'Learn the basics of Angular.', icon: 'fas fa-book' },
   { id: 2, name: 'Advanced Angular', description: 'Deep dive into Angular features.', icon: 'fas fa-code' },
   { id: 3, name: 'React for Beginners', description: 'Introduction to React and its core concepts.', icon: 'fab fa-react' },

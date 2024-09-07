@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { films, Ifilm } from '../app.component.models';
+import { films, IFilm } from '../app.component.models';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
   styleUrl: './film-details.component.scss'
 })
 export class filmDetailsComponent {
-  film!: Ifilm;
+  film!: IFilm;
   // should be the same name in router
   // and use withComponentInputBinding in app.Config
   // don't make bind for changes
@@ -58,7 +58,7 @@ export class filmDetailsComponent {
     this.router.navigate([`home`, {queryParams: {id: this.film.id + 1}}]);
   }
 
-  // getfilm(filmId: number): Ifilm {
+  // getfilm(filmId: number): IFilm {
   //   return films.find(c => c.id === filmId);
   // }
 

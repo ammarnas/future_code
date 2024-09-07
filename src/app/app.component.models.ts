@@ -1,4 +1,4 @@
-export interface Ifilm {
+export interface IFilm {
     id: number;
     title: string;
     description: string;
@@ -14,7 +14,7 @@ export enum CategoryType {
     other
 }
 
-export const films: Ifilm[] = [
+export const films: IFilm[] = [
   {
     id: 1,
     title: 'Angular Basics',

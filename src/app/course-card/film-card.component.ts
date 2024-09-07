@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CategoryType, Ifilm } from '../app.component.models';
+import { CategoryType, IFilm } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 import { ChildViewComponent } from '../child-view/child-view.component';
 import { Router } from '@angular/router';
@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   templateUrl: './film-card.component.html',
   styleUrl: './film-card.component.scss'
 })
-export class filmCardComponent {
-  @Input({required: true}) film: Ifilm = {} as Ifilm;
+export class FilmCardComponent {
+  @Input({required: true}) film: IFilm = {} as IFilm;
   categoryType = CategoryType;
 
   constructor(private router: Router) {
