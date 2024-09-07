@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FilmCardComponent } from "./film-card/film-card.component";
 import { CategoryType, IFilm } from './app.component.models';
 import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
+import { FilmCardComponent } from './film-card/film-card.component';
 
 @Component({
     selector: 'app-root',
@@ -65,11 +65,11 @@ export class AppComponent implements OnInit {
     this.data.title = title;
   }
 
-  onfilmClicked(film: IFilm): void {
+  onFilmClicked(film: IFilm): void {
     console.log('on film Clicked',film.description);
   }
 
-  trackfilm(index: number, film: IFilm): number {
+  trackFilm(index: number, film: IFilm): number {
     return film.id;
   }
 
