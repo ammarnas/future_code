@@ -21,7 +21,7 @@ export class FilmListComponent {
   private FilmService = inject(FilmService);
 
   ngOnInit() {
-  this.films = this.FilmService.getFilmList();
+  this.FilmService.getFilmList();
   console.log(this.films);
   }
 }

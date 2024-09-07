@@ -1,8 +1,8 @@
 <!-- the best to use ngClass instead of ngStyle -->
 <div class="film-card rounded text-center text-center my-2"
-    [ngClass]="film.category === categoryType.beginners ? 'beginner' : 'advanced'">
+    [ngClass]="film.episode_id === categoryType.beginners ? 'beginner' : 'advanced'">
     <div class="fw-bold p-2 film-title"
-    [ngStyle]="{'color': film.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
+    [ngStyle]="{'color': film.episode_id === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
         <!-- <h4 class="text-danger">{{title}}</h4>
         {{index}}- {{film.title}} -->
         <div>
@@ -14,9 +14,9 @@
             <img [src]="film.imageUrl" alt="image-film" class="w100 film-image">
         </div> -->
     <div class="film-description p-2 text-start">
-        {{film.description}}
+        {{film.title}}
     </div>
-    @switch (film.category) {
+    @switch (film.episode_id) {
         @case (categoryType.beginners) {
             <span class="badge bg-warning"> Beginner </span>
         }
@@ -31,6 +31,6 @@
         }
     }
     <div class="p-2">
-        <button class="btn btn-primary" (click)="viewfilm()">View Details</button>
+        <button class="btn btn-primary" (click)="viewFilm()">View Details</button>
     </div>
 </div>

@@ -17,25 +17,25 @@ export class FilmCardComponent {
 
   constructor(private router: Router) {
   }
-  get backgroundColor(): string {
-    const defaultColor = "#fa7901";
-    if(this.film) {
-      switch(this.film.category) {
-        case this.categoryType.intermediate:
-          return "#00adee";
-        case this.categoryType.advanced:
-          return "green";
-        case this.categoryType.other:
-          return "#b4bd00";
-        default:
-          return defaultColor;
-      }
-    }
-    else {
-      return defaultColor;
-    }
-  }
-  viewfilm(): void {
+  // get backgroundColor(): string {
+  //   const defaultColor = "#fa7901";
+  //   // if(this.film) {
+  //   //   switch(this.film.category) {
+  //   //     case this.categoryType.intermediate:
+  //   //       return "#00adee";
+  //   //     case this.categoryType.advanced:
+  //   //       return "green";
+  //   //     case this.categoryType.other:
+  //   //       return "#b4bd00";
+  //   //     default:
+  //   //       return defaultColor;
+  //   //   }
+  //   // }
+  //   // else {
+  //   //   return defaultColor;
+  //   // }
+  // }
+  viewFilm(): void {
     // this.router.navigateByUrl(`film-list/${this.film.id}`);
 
     this.router.navigate(["film", {queryParams: {id: 5, name: "Test"}}]);

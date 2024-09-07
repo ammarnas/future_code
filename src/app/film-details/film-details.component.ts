@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { films, IFilm } from '../app.component.models';
+import { IFilm } from '../app.component.models';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
