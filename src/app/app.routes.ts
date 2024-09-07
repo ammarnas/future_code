@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { filmListComponent } from './film-list/film-list.component';
+import { FilmListComponent } from './film-list/film-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { filmDetailsComponent } from './film-details/film-details.component';
 import { AccountComponent } from './account/account.component';
@@ -14,11 +14,11 @@ export const routes: Routes = [
   },
   {
     path: 'film-list',
-    component: filmListComponent
+    component: FilmListComponent
   },
   {
     path: 'film',
-    component: filmListComponent
+    component: FilmListComponent
   },
   {
     path: 'film-list/:id',

@@ -58,7 +58,7 @@ export class filmDetailsComponent {
     this.router.navigate([`home`, {queryParams: {id: this.film.id + 1}}]);
   }
 
-  // getfilm(filmId: number): IFilm {
+  // getFilm(filmId: number): IFilm {
   //   return films.find(c => c.id === filmId);
   // }
 

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { IFilm } from '../app.component.models';
-import { filmService } from '../services/film.service';
 import { FilmCardComponent } from "../film-card/film-card.component";
+import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-film-list',
@@ -10,18 +10,18 @@ import { FilmCardComponent } from "../film-card/film-card.component";
   templateUrl: './film-list.component.html',
   styleUrl: './film-list.component.scss'
 })
-export class filmListComponent {
+export class FilmListComponent {
   films: Array<IFilm> = [];
 
   // //Method 1
-  // constructor(private filmService: filmService){
+  // constructor(private FilmService: FilmService){
   // }
 
   // Method 2
-  private filmService = inject(filmService);
+  private FilmService = inject(FilmService);
 
   ngOnInit() {
-  this.films = this.filmService.getfilmList();
+  this.films = this.FilmService.getFilmList();
   console.log(this.films);
   }
 }

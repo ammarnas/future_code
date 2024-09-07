@@ -4,11 +4,11 @@ import { films, IFilm } from '../app.component.models';
 @Injectable({
   providedIn: 'root'
 })
-export class filmService {
+export class FilmService {
 
   constructor() { }
 
-  getfilmList(): IFilm[] {
+  getFilmList(): IFilm[] {
     return films;
   }
 
