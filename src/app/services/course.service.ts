@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { courses, ICourse } from '../app.component.models';
+import { films, Ifilm } from '../app.component.models';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class filmService {
 
   constructor() { }
 
-  getCourseList(): ICourse[] {
-    return courses;
+  getfilmList(): Ifilm[] {
+    return films;
   }
 
 }

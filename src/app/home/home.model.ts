@@ -1,18 +1,18 @@
 // home.model.ts
 
-export interface ICourseVM {
+export interface IfilmVM {
   id: number;         // Change id to number
   name: string;
   description: string;
   icon: string;       // New icon property for FontAwesome icon codes
 }
 
-export const courses: ICourseVM[] = [
+export const films: IfilmVM[] = [
   { id: 1, name: 'Angular Basics', description: 'Learn the basics of Angular.', icon: 'fas fa-book' },
   { id: 2, name: 'Advanced Angular', description: 'Deep dive into Angular features.', icon: 'fas fa-code' },
   { id: 3, name: 'React for Beginners', description: 'Introduction to React and its core concepts.', icon: 'fab fa-react' },
   { id: 4, name: 'Vue.js Essentials', description: 'Learn the essentials of Vue.js.', icon: 'fab fa-vuejs' },
-  { id: 5, name: 'Svelte Crash Course', description: 'Get started with Svelte in this crash course.', icon: 'fas fa-fire' },
+  { id: 5, name: 'Svelte Crash film', description: 'Get started with Svelte in this crash film.', icon: 'fas fa-fire' },
   { id: 6, name: 'Node.js Fundamentals', description: 'Learn the fundamentals of Node.js and server-side programming.', icon: 'fab fa-node' },
   { id: 7, name: 'Express.js In-Depth', description: 'Build robust backend applications using Express.js.', icon: 'fas fa-server' },
   { id: 8, name: 'MongoDB for Developers', description: 'Master MongoDB, the popular NoSQL database.', icon: 'fas fa-database' },

@@ -1,26 +1,26 @@
 import { Component, Input } from '@angular/core';
-import { CategoryType, ICourse } from '../app.component.models';
+import { CategoryType, Ifilm } from '../app.component.models';
 import { NgClass, NgStyle} from '@angular/common';
 import { ChildViewComponent } from '../child-view/child-view.component';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-course-card',
+  selector: 'app-film-card',
   standalone: true,
   imports: [NgClass, NgStyle, ChildViewComponent],
-  templateUrl: './course-card.component.html',
-  styleUrl: './course-card.component.scss'
+  templateUrl: './film-card.component.html',
+  styleUrl: './film-card.component.scss'
 })
-export class CourseCardComponent {
-  @Input({required: true}) course: ICourse = {} as ICourse;
+export class filmCardComponent {
+  @Input({required: true}) film: Ifilm = {} as Ifilm;
   categoryType = CategoryType;
 
   constructor(private router: Router) {
   }
   get backgroundColor(): string {
     const defaultColor = "#fa7901";
-    if(this.course) {
-      switch(this.course.category) {
+    if(this.film) {
+      switch(this.film.category) {
         case this.categoryType.intermediate:
           return "#00adee";
         case this.categoryType.advanced:
@@ -35,9 +35,9 @@ export class CourseCardComponent {
       return defaultColor;
     }
   }
-  viewCourse(): void {
-    // this.router.navigateByUrl(`course-list/${this.course.id}`);
+  viewfilm(): void {
+    // this.router.navigateByUrl(`film-list/${this.film.id}`);
 
-    this.router.navigate(["course", {queryParams: {id: 5, name: "Test"}}]);
+    this.router.navigate(["film", {queryParams: {id: 5, name: "Test"}}]);
   }
 }

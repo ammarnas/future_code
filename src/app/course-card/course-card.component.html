@@ -1,22 +1,22 @@
 <!-- the best to use ngClass instead of ngStyle -->
-<div class="course-card rounded text-center text-center my-2"
-    [ngClass]="course.category === categoryType.beginners ? 'beginner' : 'advanced'">
-    <div class="fw-bold p-2 course-title"
-    [ngStyle]="{'color': course.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
+<div class="film-card rounded text-center text-center my-2"
+    [ngClass]="film.category === categoryType.beginners ? 'beginner' : 'advanced'">
+    <div class="fw-bold p-2 film-title"
+    [ngStyle]="{'color': film.category === categoryType.beginners ? 'darkgreen' : 'darkblue'}">
         <!-- <h4 class="text-danger">{{title}}</h4>
-        {{index}}- {{course.title}} -->
+        {{index}}- {{film.title}} -->
         <div>
             <ng-content />
         </div>
         <app-child-view  />
     </div>
         <!-- <div>
-            <img [src]="course.imageUrl" alt="image-course" class="w100 course-image">
+            <img [src]="film.imageUrl" alt="image-film" class="w100 film-image">
         </div> -->
-    <div class="course-description p-2 text-start">
-        {{course.description}}
+    <div class="film-description p-2 text-start">
+        {{film.description}}
     </div>
-    @switch (course.category) {
+    @switch (film.category) {
         @case (categoryType.beginners) {
             <span class="badge bg-warning"> Beginner </span>
         }
@@ -31,6 +31,6 @@
         }
     }
     <div class="p-2">
-        <button class="btn btn-primary" (click)="viewCourse()">View Details</button>
+        <button class="btn btn-primary" (click)="viewfilm()">View Details</button>
     </div>
 </div>

@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   data = {
-    courseName: 'Angular Core Course!',
+    filmName: 'Angular Core film!',
     lessonName: 'Angular For Beginners In Arabic',
   };
   isNavbarFixed = false;

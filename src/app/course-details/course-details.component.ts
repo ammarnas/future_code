@@ -1,20 +1,20 @@
 import { Component, Input, input } from '@angular/core';
-import { courses, ICourse } from '../app.component.models';
+import { films, Ifilm } from '../app.component.models';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-course-details',
+  selector: 'app-film-details',
   standalone: true,
   imports: [],
-  templateUrl: './course-details.component.html',
-  styleUrl: './course-details.component.scss'
+  templateUrl: './film-details.component.html',
+  styleUrl: './film-details.component.scss'
 })
-export class CourseDetailsComponent {
-  course!: ICourse;
+export class filmDetailsComponent {
+  film!: Ifilm;
   // should be the same name in router
   // and use withComponentInputBinding in app.Config
   // don't make bind for changes
-  @Input('id') courseId: string = ''; // this binding from route
+  @Input('id') filmId: string = ''; // this binding from route
   constructor(private activatedRoute: ActivatedRoute, private router: Router){}
 
 // Note:
@@ -26,8 +26,8 @@ export class CourseDetailsComponent {
   // console.log('snapshot params', id);
 
   // // second static way
-  // const courseId = this.activatedRoute.snapshot.paramMap.get('id');
-  // console.log('snapshot paramMap', courseId);
+  // const filmId = this.activatedRoute.snapshot.paramMap.get('id');
+  // console.log('snapshot paramMap', filmId);
 
   // this.activatedRoute.params.subscribe((res: Params) => {
   //   console.log('params ', res['id']);
@@ -37,7 +37,7 @@ export class CourseDetailsComponent {
   //   console.log('paramMap ', res.get('id'));
   // })
 
-  // console.log('id', this.courseId);
+  // console.log('id', this.filmId);
 
   this.activatedRoute.queryParams.subscribe(res => {
     console.log('queryParams', res['id']);
@@ -46,20 +46,20 @@ export class CourseDetailsComponent {
   this.activatedRoute.queryParamMap.subscribe(res => {
     console.log("queryParamMap", res.get('id'));
     const id = Number(res.get('id'));
-    // this.course = this.getCourse(id);
+    // this.film = this.getfilm(id);
   })
   }
 
   getNext(){
-    this.router.navigate([`course`, {queryParams: {id: this.course.id + 1}}]);
+    this.router.navigate([`film`, {queryParams: {id: this.film.id + 1}}]);
   }
 
   goToHome(){
-    this.router.navigate([`home`, {queryParams: {id: this.course.id + 1}}]);
+    this.router.navigate([`home`, {queryParams: {id: this.film.id + 1}}]);
   }
 
-  // getCourse(courseId: number): ICourse {
-  //   return courses.find(c => c.id === courseId);
+  // getfilm(filmId: number): Ifilm {
+  //   return films.find(c => c.id === filmId);
   // }
 
 }

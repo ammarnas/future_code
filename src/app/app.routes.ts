@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { CourseListComponent } from './course-list/course-list.component';
+import { filmListComponent } from './film-list/film-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
+import { filmDetailsComponent } from './film-details/film-details.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
@@ -13,16 +13,16 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'course-list',
-    component: CourseListComponent
+    path: 'film-list',
+    component: filmListComponent
   },
   {
-    path: 'course',
-    component: CourseListComponent
+    path: 'film',
+    component: filmListComponent
   },
   {
-    path: 'course-list/:id',
-    component: CourseDetailsComponent
+    path: 'film-list/:id',
+    component: filmDetailsComponent
   },
   {
     path: 'account',

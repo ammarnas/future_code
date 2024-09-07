@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICourseVM, courses } from './home.model';
+import { IfilmVM, films } from './home.model';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +11,5 @@ import { ICourseVM, courses } from './home.model';
 export class HomeComponent {
   @Input() id = '';
 
-  readonly courses: Array<ICourseVM> = courses;
+  readonly films: Array<IfilmVM> = films;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CourseCardComponent } from "./course-card/course-card.component";
-import { CategoryType, ICourse } from './app.component.models';
+import { filmCardComponent } from "./film-card/film-card.component";
+import { CategoryType, Ifilm } from './app.component.models';
 import { CommonModule } from '@angular/common';
 import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
@@ -11,15 +11,15 @@ import { HeaderComponent } from "./header/header.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, CourseCardComponent, CommonModule, HeaderComponent]
+    imports: [RouterOutlet, filmCardComponent, CommonModule, HeaderComponent]
 })
 export class AppComponent implements OnInit {
   data = {
-    courseName: 'Angular Core Course!',
+    filmName: 'Angular Core film!',
     title: 'Angular For Beginners In Arabic',
   };
 
-  courses: Array<ICourse> = [
+  films: Array<Ifilm> = [
   {
     id: 1,
     title: 'Angular For Beginners',
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   },
   {
     id: 4,
-    title: 'Course With no image',
+    title: 'film With no image',
     description:'Likewise hi-tech concept of the social system allows to appreciate the value of economic practicability of decisions made. The significance of such problems is so obvious that the innovational path that we have chosen directly depends on strengthening the democratic system.',
     lessonsCount: 33,
     category: CategoryType.other,
@@ -65,12 +65,12 @@ export class AppComponent implements OnInit {
     this.data.title = title;
   }
 
-  onCourseClicked(course: ICourse): void {
-    console.log('on Course Clicked',course.description);
+  onfilmClicked(film: Ifilm): void {
+    console.log('on film Clicked',film.description);
   }
 
-  trackCourse(index: number, course: ICourse): number {
-    return course.id;
+  trackfilm(index: number, film: Ifilm): number {
+    return film.id;
   }
 
   ngOnInit(): void {

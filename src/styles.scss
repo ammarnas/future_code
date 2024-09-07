@@ -1,26 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "~@fortawesome/fontawesome-free/css/all.css";
 
-.even-course {
-    .course-card {
+.even-film {
+    .film-card {
         background-color: lightgray;
     }
 }
 
-.odd-course {
-    .course-card {
+.odd-film {
+    .film-card {
         background-color: lightcyan;
     }
 }
 
-.first-course {
-    .course-card {
+.first-film {
+    .film-card {
         border-top: 5px solid #000;
     }
 }
 
-.last-course {
-    .course-card {
+.last-film {
+    .film-card {
         border-bottom: 5px solid #000;
     }
 }

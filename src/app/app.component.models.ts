@@ -1,4 +1,4 @@
-export interface ICourse {
+export interface Ifilm {
     id: number;
     title: string;
     description: string;
@@ -14,14 +14,14 @@ export enum CategoryType {
     other
 }
 
-export const courses: ICourse[] = [
+export const films: Ifilm[] = [
   {
     id: 1,
     title: 'Angular Basics',
     description: 'Learn the basics of Angular.',
     lessonsCount: 10,
     category: CategoryType.beginners,
-    longDescription: 'This course covers the fundamental concepts of Angular, including components, services, and modules.',
+    longDescription: 'This film covers the fundamental concepts of Angular, including components, services, and modules.',
     imageUrl: 'path/to/angular-basics-image.jpg'
   },
   {
@@ -53,12 +53,12 @@ export const courses: ICourse[] = [
   },
   {
     id: 5,
-    title: 'Svelte Crash Course',
-    description: 'Get started with Svelte in this crash course.',
+    title: 'Svelte Crash film',
+    description: 'Get started with Svelte in this crash film.',
     lessonsCount: 7,
     category: CategoryType.beginners,
     longDescription: 'Dive into Svelte, a modern JavaScript framework, and learn about its unique approach to building user interfaces.',
-    imageUrl: 'path/to/svelte-crash-course-image.jpg'
+    imageUrl: 'path/to/svelte-crash-film-image.jpg'
   },
   {
     id: 6,

@@ -1,27 +1,27 @@
 import { Component, inject } from '@angular/core';
-import { ICourse } from '../app.component.models';
-import { CourseService } from '../services/course.service';
-import { CourseCardComponent } from "../course-card/course-card.component";
+import { Ifilm } from '../app.component.models';
+import { filmService } from '../services/film.service';
+import { filmCardComponent } from "../film-card/film-card.component";
 
 @Component({
-  selector: 'app-course-list',
+  selector: 'app-film-list',
   standalone: true,
-  imports: [CourseCardComponent],
-  templateUrl: './course-list.component.html',
-  styleUrl: './course-list.component.scss'
+  imports: [filmCardComponent],
+  templateUrl: './film-list.component.html',
+  styleUrl: './film-list.component.scss'
 })
-export class CourseListComponent {
-  courses: Array<ICourse> = [];
+export class filmListComponent {
+  films: Array<Ifilm> = [];
 
   // //Method 1
-  // constructor(private courseService: CourseService){
+  // constructor(private filmService: filmService){
   // }
 
   // Method 2
-  private courseService = inject(CourseService);
+  private filmService = inject(filmService);
 
   ngOnInit() {
-  this.courses = this.courseService.getCourseList();
-  console.log(this.courses);
+  this.films = this.filmService.getfilmList();
+  console.log(this.films);
   }
 }
