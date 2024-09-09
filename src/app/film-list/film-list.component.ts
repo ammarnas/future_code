@@ -11,8 +11,7 @@ import { FilmService } from '../services/film.service';
   styleUrl: './film-list.component.scss'
 })
 export class FilmListComponent {
-  // films: Array<IFilm> = [];
-  films: any;
+  films: Array<IFilm> = [];
 
   // //Method 1
   // constructor(private FilmService: FilmService){

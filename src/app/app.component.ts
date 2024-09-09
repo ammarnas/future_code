@@ -6,13 +6,15 @@ import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
 import { FilmCardComponent } from './film-card/film-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, FilmCardComponent, CommonModule, HeaderComponent, HttpClientModule]
+    providers: [ApiService],
+    imports: [RouterOutlet, CommonModule, HeaderComponent, HttpClientModule]
 })
 export class AppComponent implements OnInit {
   data = {

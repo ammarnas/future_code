@@ -15,7 +15,9 @@ export interface IFilm {
   edited: string;
   url: string;
 }
-
+export interface IGetFilmResponse {
+  results: IFilm[];
+}
 export enum CategoryType {
     beginners = 1,
     intermediate = 2,
