@@ -6,7 +6,7 @@ import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
 import { FilmCardComponent } from './film-card/film-card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './services/api.service';
+import { ApiService } from './shared/services/api.service';
 
 @Component({
     selector: 'app-root',
