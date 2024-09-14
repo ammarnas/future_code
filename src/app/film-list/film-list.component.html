@@ -1,3 +1,11 @@
-@for (film of films; track film.id) {
-  <app-film-card [film]="film"></app-film-card>
-}
+<div class="container-fluid">
+  <div class="row">
+    @for (film of films; track film.id) {
+      <div class="col-md-3 col-12">
+        <app-film-card [film]="film"></app-film-card>
+      </div>
+    } @empty {
+        <h1>No Courses Found!</h1>
+        }
+    </div>
+</div>

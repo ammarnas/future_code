@@ -11,14 +11,8 @@ import { FilmService } from '../shared/services/film.service';
   styleUrl: './film-list.component.scss'
 })
 export class FilmListComponent {
-  films: Array<IFilm> = [];
-
-  // //Method 1
-  // constructor(private FilmService: FilmService){
-  // }
-
-  // Method 2
   private FilmService = inject(FilmService);
+  films: Array<IFilm> = [];
 
   ngOnInit() {
   this.FilmService.getFilms().subscribe((films)=>
