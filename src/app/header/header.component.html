@@ -1,32 +1,33 @@
 <div class="p-2 text-light d-flex flex-column channel-name">
   <div class="d-flex justify-content-between">
-    <div class="text-warning">Coding from A to Z</div>
-    <div class="text-warning">{{data.filmName}}</div>
+      <div class="text-warning">Coding from A to Z</div>
+      <div class="text-warning">{{data.courseName}}</div>
   </div>
   <hr class="my-2">
   <div class="d-flex justify-content-between align-items-center header" [class.sticky]="isNavbarFixed">
-    <h5 class="mb-0">{{data.lessonName}}</h5>
-    <nav>
-      <ul class="d-flex p-0 m-0">
-        <li class="d-flex">
-          <a class="nav-link d-flex p-0" routerLink="home" routerLinkActive="active">
-            <span class="nav-link-inner">Home</span>
-          </a>
-        </li>
-        <li class="d-flex">
-          <a class="nav-link d-flex p-0">
-            <span class="nav-link-inner" routerLink="film-list" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">film list</span>
-          </a>
-        </li>
-        <li class="d-flex">
-          <a class="nav-link d-flex p-0">
-            <span class="nav-link-inner" routerLink="account" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Account</span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
+      <h5 class="mb-0">
+          <i class="fa-brands fa-angular"></i>
+          {{data.courseName}}
+      </h5>
+      <nav>
+          <ul class="d-flex p-0 m-0">
+              <li class="d-flex">
+                  <a class="nav-link d-flex p-0" routerLink="home" routerLinkActive="active">
+                      <span class="nav-link-inner">Home</span>
+                  </a>
+              </li>
+              <li class="d-flex">
+                  <a class="nav-link d-flex p-0" [routerLink]="['/film-list']" routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact: true}">
+                      <span class="nav-link-inner">Film List</span>
+                  </a>
+              </li>
+              <li class="d-flex">
+                  <a class="nav-link d-flex p-0" routerLink="account" routerLinkActive="active">
+                      <span class="nav-link-inner">Account</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
   </div>
 </div>

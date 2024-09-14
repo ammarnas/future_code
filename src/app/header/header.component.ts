@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
   data = {
     filmName: 'Angular Core film!',
-    lessonName: 'Angular For Beginners In Arabic',
+    courseName: 'Angular For Beginners In Arabic',
   };
   isNavbarFixed = false;
 
