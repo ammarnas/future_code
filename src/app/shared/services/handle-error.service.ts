@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 })
 export class HandleErrorService {
 
-  public handleError(errorResponse: HttpErrorResponse): Observable<any> {
+  public logErrorResponse(errorResponse: HttpErrorResponse): Observable<any> {
     if(errorResponse.status === 0){
       console.log(`A client side error occurred: ${errorResponse.status} - ${errorResponse.error}`);
     } else {
