@@ -23,6 +23,5 @@ export class FilmListComponent {
   ngOnInit() {
   this.FilmService.getFilms().subscribe((films)=>
   this.films = films);
-  console.log(this.films);
   }
 }

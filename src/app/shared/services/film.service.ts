@@ -12,7 +12,6 @@ export class FilmService {
   apiService = inject(ApiService);
 
   getFilms(): Observable<IFilm[]> {
-    console.log(`${baseURL}films`);
     return this.apiService.getRequest<IGetFilmResponse>('films')
     .pipe(
       map(response => response.results));
