@@ -4,23 +4,26 @@
       <i class="fa-brands fa-angular angular-icon"></i>
     </div>
     <div class="p-3">
-      <h1>Coding form A to Z</h1>
+      <h1 class="text-light">
+          Coding from A to Z
+      </h1>
     </div>
     <h3 class="text-light">
       Stay Updated with the Angular Ecosystem
     </h3>
   </div>
   <div class="col-12 p-4 text-warning text-center">
-    <h2>Upcoming films!</h2>
+      <h2>Upcoming Films!</h2>
   </div>
-  @for(film of films; track film.id) {
-    <div class="film text-light p-3 m-3 text-center rounded d-flex align-items-center justify-content-center"
-      [class.visited]="film.id === +id">
-    <div class="d-flex flex-column">
-      <div><i [class]="film.icon"></i></div>
-      <div>{{film.name}}</div>
-    </div>
+  @for (film of films; track film.id) {
+    <div class="col-2">
+        <div class="course text-light p-3 m-3 text-center rounded d-flex align-items-center
+            justify-content-center" [class.visited]="film.id === +id">
+            <div class="d-flex flex-column">
+                <div><i [class]="film.icon"></i></div>
+                <div>{{film.name}}</div>
+            </div>
+        </div>
     </div>
   }
-
 </div>
