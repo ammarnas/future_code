@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { NavigationService } from '../../shared/services/navigation.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,9 @@ export class LoginComponent {
 
   hide = true;
 
+  private navigationService = inject(NavigationService);
+
   navigateToRegister() {
-    throw new Error('Method not implemented.');
+    this.navigationService.navigateByUrl('/account/register');
     }
 }
