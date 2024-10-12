@@ -1,0 +1,25 @@
+.film-card {
+    box-shadow: 0 1px 16px 0 rgba(0, 0, 0, .2), 0 2px 8px 0 rgba(0, 0, 0, .14), 0 4px 8px -1px rgba(0, 0, 0, .12);
+    width: 50%;
+    margin: auto;
+}
+.film-title {
+    font-size: 27px;
+}
+.film-description {
+    user-select: none;
+}
+
+.film-category-badge {
+  padding: 5px 45px;
+  transform: rotateZ(-45deg);
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  left: -55px;
+  right: -55px;
+  top: 25px;
+  color: #ffffff;
+  font-size: 0.938rem;
+  z-index: 1;
+}

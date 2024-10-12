@@ -1,0 +1,32 @@
+<div class="film-card rounded text-center my-2 position-relative overflow-hidden">
+  <div class="fw-bold p-2 film-title">
+      {{film.title}}
+  </div>
+  <div>
+    <img [src]="randomImage" alt="film_image" class="w-100 film_image">
+  </div>
+  <div class="film-description p-2 text-start text-truncate">
+      {{film.opening_crawl}}
+  </div>
+
+  <span class="film-category-badge top-left" [style.background-color]="backgroundColor">
+      @switch(film.episode_id) {
+          @case (1) {
+              Beginners
+          }
+          @case (2) {
+              Intermediate
+          }
+          @case (3) {
+              Advanced
+          }
+          @default {
+              Other
+          }
+      }
+  </span>
+
+  <div class="px-2 pt-2 pb-4">
+      <button class="btn btn-outline-primary" (click)="viewFilm()">View Film</button>
+  </div>
+</div>
