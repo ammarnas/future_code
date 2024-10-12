@@ -1,1 +1,58 @@
-<p>register works!</p>
+<div class="container bg-body-tertiary">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5 col-12 p-3 border bg-white">
+      <a
+        (click)="navigateToLogin()"
+        class="text-muted btn btn-link text-decoration-none">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+      </a>
+      <h1 class="text-center py-3 fw-bold">Sign Up</h1>
+      <div class="row">
+        <mat-form-field appearance="fill" class="col-12">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="Enter Your User Name">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-12">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter Your Email">
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-12">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput placeholder="Enter Your Mobile Number">
+          <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-12">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Enter your password"
+            [type]="hide ? 'password' : 'text'"
+          >
+          <button
+            matSuffix
+            mat-icon-button
+            (click)="hide = !hide"
+            [attr.aria-pressed]="hide"
+            [attr.aria-label]="'Hide password'"
+            >
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-12">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput placeholder="Enter Your Confirm Password" [type]="hideConfirmPassword ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+              <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+      </mat-form-field>
+      <div class="col-12">
+        <button mat-flat-button color="primary" class="w-100">Register</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
