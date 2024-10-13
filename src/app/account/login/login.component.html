@@ -5,6 +5,9 @@
         <img src="https://picsum.photos/id/0/600/600" alt="logo" class="rounded-circle" style="width: 150px;">
       </div>
       <h1 class="text-center fw-bold">Login to your account</h1>
+      <div class="py-2">
+        {{ loginForm.value | json }}
+      </div>
       <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="fill" class="col-12">
           <mat-label>Email</mat-label>
@@ -12,7 +15,8 @@
             ngModel
             matInput
             name="email"
-            placeholder="Enter your Email">
+            placeholder="Enter your Email"
+          >
           <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="fill" class="col-12">
