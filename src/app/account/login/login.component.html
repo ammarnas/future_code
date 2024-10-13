@@ -6,7 +6,7 @@
       </div>
       <h1 class="text-center fw-bold">Login to your account</h1>
       <div class="py-2">
-        {{ email }} - {{ password }}
+        {{ loginDto.email | json }}
       </div>
       <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="fill" class="col-12">
@@ -14,7 +14,7 @@
           <input
             matInput
             name="email"
-            [(ngModel)]="email"
+            [(ngModel)]="loginDto.email"
             placeholder="Enter your Email"
           >
           <mat-icon matSuffix>email</mat-icon>
@@ -24,7 +24,7 @@
           <input
             matInput
             name="password"
-            [(ngModel)]="password"
+            [(ngModel)]="loginDto.password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
           >
