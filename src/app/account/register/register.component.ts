@@ -15,6 +15,7 @@ export class RegisterComponent {
   hideConfirmPassword = true;
   private navigationService = inject(NavigationService);
 
+  
   navigateToLogin(): void {
     this.navigationService.navigateByUrl('/account/login');
   }
