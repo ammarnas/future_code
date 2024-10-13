@@ -5,16 +5,26 @@
         <img src="https://picsum.photos/id/0/600/600" alt="logo" class="rounded-circle" style="width: 150px;">
       </div>
       <h1 class="text-center fw-bold">Login to your account</h1>
-      <div class="row">
+      <div class="py-2">
+        {{ loginDto.email | json }}
+      </div>
+      <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="fill" class="col-12">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Enter your Email">
+          <input
+            matInput
+            name="email"
+            [(ngModel)]="loginDto.email"
+            placeholder="Enter your Email"
+          >
           <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="fill" class="col-12">
           <mat-label>Password</mat-label>
           <input
             matInput
+            name="password"
+            [(ngModel)]="loginDto.password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
           >
@@ -29,7 +39,12 @@
           </button>
         </mat-form-field>
         <div class="col-12">
-          <button mat-flat-button color="primary" class="w-100">Login</button>
+          <button
+          mat-flat-button
+          color="primary"
+          class="w-100"
+          (click)="login(loginForm)"
+          >Login</button>
         </div>
         <div class="py-2">
           <hr class="title-separator text-center position-relative text-dark" [attr.data-content]="'OR'">
@@ -37,7 +52,7 @@
         <div class="col-12 pb-2">
           <button class="btn btn-outline-primary w-100" (click)="navigateToRegister()">Register</button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
