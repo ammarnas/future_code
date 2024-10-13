@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -17,5 +18,9 @@ export class LoginComponent {
 
   navigateToRegister() {
     this.navigationService.navigateByUrl('/account/register');
+    }
+
+  login(loginForm: NgForm) {
+    console.log('LoginForm', loginForm)
     }
 }
