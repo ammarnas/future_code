@@ -13,6 +13,8 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
 
   hide = true;
+  email = "";
+  password = "";
 
   private navigationService = inject(NavigationService);
 
