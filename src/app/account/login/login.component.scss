@@ -24,3 +24,13 @@
       background-color: #ffffff;
   }
 }
+
+::ng-deep {
+  .email-control.ng-valid {
+    &.ng-dirty {
+      .mat-icon {
+        color: green;
+      }
+    }
+  }
+}
