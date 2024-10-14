@@ -24,15 +24,9 @@
             placeholder="Enter your Email"
           >
           <mat-icon matSuffix>email</mat-icon>
+          <!-- Third way to check on validation -->
+          <mat-error>Email is required</mat-error>
         </mat-form-field>
-        <!-- second way to check on validation
-          email.errors[] maybe is null so I add !
-        -->
-        @if (email.errors!['required'] && email.touched) {
-          <div class="alert alert-danger">
-            Email is required
-          </div>
-        }
         <mat-form-field appearance="outline" class="col-12">
           <mat-label>Password</mat-label>
           <input
