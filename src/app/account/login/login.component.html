@@ -17,6 +17,7 @@
           <mat-label>Email</mat-label>
           <input
             required
+            minlength="5"
             matInput
             name="email"
             #email="ngModel"
@@ -26,6 +27,11 @@
           <mat-icon matSuffix>email</mat-icon>
           @if(email.errors?.['required']){
             <mat-error>Email is required</mat-error>
+          }
+          @if(email.errors?.['minlength']){
+            <mat-error>Email must be more then {{email.errors?.['minlength'].requiredLength}} characters
+              but you insert only {{ email.errors?.['minlength'].actualLength }}
+            </mat-error>
           }
         </mat-form-field>
         <mat-form-field appearance="outline" class="col-12">
