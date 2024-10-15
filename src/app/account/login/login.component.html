@@ -14,6 +14,7 @@
       -->
         <!--
           maxLength prevent user to add more character and not have validation error
+          pattern=".*@.*\.com$" this pattern validate that email ends with .com
         -->
       <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="outline" class="col-12 email-control">
@@ -23,6 +24,7 @@
             minlength="5"
             maxlength="15"
             email
+            pattern=".*@.*\.com$"
             matInput
             name="email"
             #email="ngModel"
@@ -40,6 +42,9 @@
           }
           @if(email.errors?.['email']){
             <mat-error>Email is not valid</mat-error>
+          }
+          @if(email.errors?.['email']){
+            <mat-error>Email must have .com</mat-error>
           }
         </mat-form-field>
         <mat-form-field appearance="outline" class="col-12">
