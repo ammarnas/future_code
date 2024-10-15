@@ -12,12 +12,16 @@
           ng-touched != ng-untouched
           ng-dirty != ng-pristine
       -->
+        <!--
+          maxLength prevent user to add more character and not have validation error
+        -->
       <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="outline" class="col-12 email-control">
           <mat-label>Email</mat-label>
           <input
             required
             minlength="5"
+            maxlength="15"
             matInput
             name="email"
             #email="ngModel"
