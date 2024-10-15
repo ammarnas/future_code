@@ -15,6 +15,7 @@
         <!--
           maxLength prevent user to add more character and not have validation error
           pattern=".*@.*\.com$" this pattern validate that email ends with .com
+          angular auto add 'novlidate' class to from to prevent use the html validator and use the angular validator
         -->
       <form class="row" #loginForm="ngForm">
         <mat-form-field appearance="outline" class="col-12 email-control">
@@ -40,10 +41,10 @@
               but you insert only {{ email.errors?.['minlength'].actualLength }}
             </mat-error>
           }
-          @if(email.errors?.['email']){
+          @if(email.errors?.['email'] && !email.errors?.['minlength']){
             <mat-error>Email is not valid</mat-error>
           }
-          @if(email.errors?.['email']){
+          @if(email.errors?.['email'] && !email.errors?.['email'] && !email.errors?.['minlength']){
             <mat-error>Email must have .com</mat-error>
           }
         </mat-form-field>
