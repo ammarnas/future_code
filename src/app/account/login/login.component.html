@@ -78,7 +78,9 @@
             color="primary"
             class="w-100"
             (click)="login(loginForm, $event)"
-          >Login
+            [disabled]="loginForm.invalid"
+          >
+            Login
           </button>
         </div>
         <div class="py-2">
