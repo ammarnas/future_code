@@ -18,6 +18,7 @@
           angular auto add 'novlidate' class to from to prevent use the html validator and use the angular validator
           (ngSubmit) just work with submit button type
         -->
+          {{ password.value }}
       <form class="row" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
         <mat-form-field appearance="outline" class="col-12 email-control">
           <mat-label>Email</mat-label>
@@ -51,9 +52,17 @@
         </mat-form-field>
         <mat-form-field appearance="outline" class="col-12">
           <mat-label>Password</mat-label>
+          <!-- ngModelOptions
+              [ngModelOptions]="{updateOn: 'change'}" is the default
+              [ngModelOptions]="{updateOn: 'blur'}"
+              [ngModelOptions]="{updateOn: 'submit'}"
+          -->
           <input
             matInput
             name="password"
+            #password="ngModel"
+            (ngModelChange)="onPasswordChange(password.value)"
+            [ngModelOptions]="{updateOn: 'change'}"
             [(ngModel)]="loginDto.password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
@@ -67,6 +76,17 @@
             >
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
+          @if(password.errors?.['required']){
+            <mat-error>password is required</mat-error>
+          }
+          @if(password.errors?.['minlength']){
+            <mat-error>password must be more then {{password.errors?.['minlength'].requiredLength}} characters
+              but you insert only {{ password.errors?.['minlength'].actualLength }}
+            </mat-error>
+          }
+          @if(password.errors?.['password'] && !password.errors?.['minlength']){
+            <mat-error>password is not valid</mat-error>
+          }
         </mat-form-field>
         <div class="col-12">
           <!-- default type of button is submit -->

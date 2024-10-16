@@ -38,4 +38,8 @@ export class LoginComponent {
   submit(loginForm: NgForm) {
     console.log('LoginForm submit', loginForm)
   }
+
+  onPasswordChange(password: string) {
+    console.log("password change", password);
+  }
 }
