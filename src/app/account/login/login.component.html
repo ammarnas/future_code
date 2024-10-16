@@ -16,8 +16,9 @@
           maxLength prevent user to add more character and not have validation error
           pattern=".*@.*\.com$" this pattern validate that email ends with .com
           angular auto add 'novlidate' class to from to prevent use the html validator and use the angular validator
+          (ngSubmit) just work with submit button type
         -->
-      <form class="row" #loginForm="ngForm">
+      <form class="row" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
         <mat-form-field appearance="outline" class="col-12 email-control">
           <mat-label>Email</mat-label>
           <input
@@ -67,6 +68,19 @@
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
+        <div class="col-12">
+          <!-- default type of button is submit -->
+          <!-- if the button out of form or the button type not submit
+          so we can't submit the form so we parse the form and the $event
+          and parse the event to onSubmit method in form-->
+          <button
+            mat-flat-button
+            color="primary"
+            class="w-100"
+            (click)="login(loginForm, $event)"
+          >Login
+          </button>
+        </div>
         <div class="py-2">
           <hr class="title-separator text-center position-relative text-dark" [attr.data-content]="'OR'">
         </div>
@@ -74,19 +88,6 @@
           <button class="btn btn-outline-primary w-100" (click)="navigateToRegister()">Register</button>
         </div>
       </form>
-      <div class="col-12">
-        <!-- default type of button is submit -->
-        <!-- if the button out of form or the button type not submit
-        so we can't submit the form so we parse the form and the $event
-        and parse the event to onSubmit method in form-->
-        <button
-          mat-flat-button
-          color="primary"
-          class="w-100"
-          (click)="login(loginForm, $event)"
-        >Login
-        </button>
-      </div>
     </div>
   </div>
 </div>

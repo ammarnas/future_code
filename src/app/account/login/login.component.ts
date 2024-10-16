@@ -31,7 +31,11 @@ export class LoginComponent {
     }
 
   login(loginForm: NgForm, event: Event) {
-    loginForm.onSubmit(event);
-    console.log('LoginForm', loginForm)
+    // loginForm.onSubmit(event);
+    // console.log('LoginForm login', loginForm)
     }
+
+  submit(loginForm: NgForm) {
+    console.log('LoginForm submit', loginForm)
+  }
 }
