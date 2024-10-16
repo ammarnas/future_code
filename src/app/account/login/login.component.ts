@@ -30,7 +30,8 @@ export class LoginComponent {
     this.navigationService.navigateByUrl('/account/register');
     }
 
-  login(loginForm: NgForm) {
+  login(loginForm: NgForm, event: Event) {
+    loginForm.onSubmit(event);
     console.log('LoginForm', loginForm)
     }
 }
