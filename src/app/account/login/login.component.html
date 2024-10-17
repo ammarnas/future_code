@@ -57,6 +57,7 @@
               [ngModelOptions]="{updateOn: 'blur'}"
               [ngModelOptions]="{updateOn: 'submit'}"
               [ngModelOptions]="{name: 'modelName'}" use to set the user name
+              [ngModelOptions]="{standalone: false}" use to set if the control is a part of form the default value is 'false' means is a part of form true that is not a part of form
           -->
           <input
             matInput
@@ -65,7 +66,8 @@
             (ngModelChange)="onPasswordChange(password.value)"
             [ngModelOptions]="{
               updateOn: 'change',
-              name: 'Password'
+              name: 'Password',
+              standalone: false
               }"
             [(ngModel)]="loginDto.password"
             placeholder="Enter your password"
