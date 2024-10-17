@@ -18,7 +18,7 @@
           angular auto add 'novlidate' class to from to prevent use the html validator and use the angular validator
           (ngSubmit) just work with submit button type
         -->
-          {{ password.value }}
+          {{ loginForm.value | json }}
       <form class="row" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
         <mat-form-field appearance="outline" class="col-12 email-control">
           <mat-label>Email</mat-label>
@@ -56,13 +56,17 @@
               [ngModelOptions]="{updateOn: 'change'}" is the default
               [ngModelOptions]="{updateOn: 'blur'}"
               [ngModelOptions]="{updateOn: 'submit'}"
+              [ngModelOptions]="{name: 'modelName'}" use to set the user name
           -->
           <input
             matInput
             name="password"
             #password="ngModel"
             (ngModelChange)="onPasswordChange(password.value)"
-            [ngModelOptions]="{updateOn: 'change'}"
+            [ngModelOptions]="{
+              updateOn: 'change',
+              name: 'Password'
+              }"
             [(ngModel)]="loginDto.password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
