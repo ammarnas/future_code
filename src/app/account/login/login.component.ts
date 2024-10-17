@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { NgForm } from '@angular/forms';
+import { ILoginDto } from '../models/IlooginDto';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,9 @@ export class LoginComponent {
     //   password: ""
     // };
   // second way to declare object
-    loginDto: {email: string, password: string } = {
-      email: "",
-      password: ""
+    loginDto: ILoginDto = {
+      email: "test@me.com",
+      password: "1234567"
     };
 
   private navigationService = inject(NavigationService);
@@ -36,6 +37,7 @@ export class LoginComponent {
     }
 
   submit(loginForm: NgForm) {
+    console.log('LoginDto', this.loginDto);
     console.log('LoginForm submit', loginForm)
   }
 

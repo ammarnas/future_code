@@ -17,6 +17,7 @@
           pattern=".*@.*\.com$" this pattern validate that email ends with .com
           angular auto add 'novlidate' class to from to prevent use the html validator and use the angular validator
           (ngSubmit) just work with submit button type
+          [ngModel]: this one way data binding not update in model
         -->
           {{ loginForm.value | json }}
       <form class="row" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
@@ -31,7 +32,7 @@
             matInput
             name="email"
             #email="ngModel"
-            [(ngModel)]="loginDto.email"
+            [ngModel]="loginDto.email"
             placeholder="Enter your Email"
           >
           <mat-icon matSuffix>email</mat-icon>
@@ -69,7 +70,7 @@
               name: 'Password',
               standalone: false
               }"
-            [(ngModel)]="loginDto.password"
+            [ngModel]="loginDto.password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
           >
