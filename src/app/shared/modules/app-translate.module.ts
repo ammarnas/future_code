@@ -5,7 +5,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n', '.json');
+const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 
 const translateCompilerFactory = () => new TranslateMessageFormatCompiler();
 
@@ -20,12 +20,7 @@ const translateCompiler: Provider = {
   useFactory: translateCompilerFactory
 };
 
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
+@NgModule()
 export class AppTranslateModule {
   static forRoot(): ModuleWithProviders<AppTranslateModule> {
     return TranslateModule.forRoot({
