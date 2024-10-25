@@ -37,7 +37,7 @@
           <mat-label>Password</mat-label>
           <input
             matInput
-            formControlName="password"
+            [formControl]="password"
             placeholder="Enter your password"
             [type]="hide ? 'password' : 'text'"
           >

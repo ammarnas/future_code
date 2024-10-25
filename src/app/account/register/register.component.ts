@@ -15,7 +15,8 @@ export class RegisterComponent {
   hide = true;
   hideConfirmPassword = true;
   private navigationService = inject(NavigationService);
-  registerForm: FormGroup
+  registerForm: FormGroup;
+  password = new FormControl<string>('');
 
   constructor() {
     this.registerForm = this.initFrom();
@@ -31,12 +32,14 @@ export class RegisterComponent {
   //Initial Value: or pass it like this
     // {value: "test", disabled: false}
   //Initial Value: we have to be care to type if strongly here too
+
+  // Init the Control: by create a property and use it in the from group and use the [formControl] directive with the property instead of formControlName in the html
   private initFrom() : FormGroup {
     return new FormGroup({
       userName: new FormControl({value: "test", disabled: false}),
       email: new FormControl(''),
       mobileNumber: new FormControl(''),
-      password: new FormControl(''),
+      password: this.password,
       confirmPassword: new FormControl(''),
     });
   }
