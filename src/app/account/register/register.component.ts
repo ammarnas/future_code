@@ -37,7 +37,7 @@ export class RegisterComponent {
   private initFrom() : FormGroup {
     return new FormGroup({
       userName: new FormControl({value: "test", disabled: false}),
-      email: new FormControl(''),
+      email: new FormControl('', {updateOn: "blur"}),
       mobileNumber: new FormControl(''),
       password: this.password,
       confirmPassword: new FormControl(''),
