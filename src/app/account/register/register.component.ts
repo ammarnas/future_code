@@ -20,10 +20,20 @@ export class RegisterComponent {
   constructor() {
     this.registerForm = this.initFrom();
   }
-
+  // Notes:
+  // FormControl extends AbstractControl
+  //Input Type: we can set the control type by pass the value:
+    // FormControl('') => string, FormControl([]) => array, FormControl(3) => number
+  //Input Type: we can make it strongly type:
+    // FormControl<string>() => string, FormControl<[]>() => array, FormControl<number>() => number
+  //Initial Value: to set the initial value either pass to FormControl
+    // FormControl(10) => 10 is the initial value
+  //Initial Value: or pass it like this
+    // {value: "test", disabled: false}
+  //Initial Value: we have to be care to type if strongly here too
   private initFrom() : FormGroup {
     return new FormGroup({
-      userName: new FormControl(''),
+      userName: new FormControl({value: "test", disabled: false}),
       email: new FormControl(''),
       mobileNumber: new FormControl(''),
       password: new FormControl(''),
