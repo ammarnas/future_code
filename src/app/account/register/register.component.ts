@@ -34,11 +34,13 @@ export class RegisterComponent {
   //Initial Value: we have to be care to type if strongly here too
 
   // Init the Control: by create a property and use it in the from group and use the [formControl] directive with the property instead of formControlName in the html
+
+  //nonNullable: means control not accept null value and when reset reset to init value
   private initFrom() : FormGroup {
     return new FormGroup({
       userName: new FormControl({value: "test", disabled: false}),
       email: new FormControl('', {updateOn: "blur"}),
-      mobileNumber: new FormControl(''),
+      mobileNumber: new FormControl('',{nonNullable: false}),
       password: this.password,
       confirmPassword: new FormControl(''),
     });
