@@ -40,18 +40,18 @@ export class RegisterComponent implements OnInit {
   //nonNullable: means control not accept null value and when reset reset to init value
   private initFrom() : void {
     // using FormControl
-    this.registerForm = new FormGroup({
-      userName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      mobileNumber: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      // or like this
-      // confirmPassword: new FormControl('', {validators: [Validators.required, Validators.minLength(6)]}),
-    },
-    {
-      validators: ValidationService.mustMatch('password', 'confirmPassword')
-    });
+    // this.registerForm = new FormGroup({
+    //   userName: new FormControl('', [Validators.required]),
+    //   email: new FormControl('', [Validators.required, Validators.email]),
+    //   mobileNumber: new FormControl('', [Validators.required]),
+    //   password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    //   confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    //   // or like this
+    //   // confirmPassword: new FormControl('', {validators: [Validators.required, Validators.minLength(6)]}),
+    // },
+    // {
+    //   validators: ValidationService.mustMatch('password', 'confirmPassword')
+    // });
 
     // using formBuilder
     this.registerForm = this.formBuilder.group({

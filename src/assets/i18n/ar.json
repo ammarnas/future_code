@@ -1,5 +1,8 @@
 {
   "validation": {
-    "required": "هذا الحقل مطلوب"
+    "requiredMessage": "هذا الحقل مطلوب",
+    "invalidEmail": "الرجاء إدخال بريد إلكتروني صحيح",
+    "passwordLength": "كلمة المرور يجب أن تكون على الأقل 6 حروف",
+    "passwordMatch": "كلمات المرور غير متطابقة"
   }
 }

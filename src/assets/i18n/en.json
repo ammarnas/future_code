@@ -1,5 +1,8 @@
 {
   "validation": {
-    "required": "This field is required"
+    "requiredMessage": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordLength": "Password must be at least 6 characters long",
+    "passwordMatch": "Passwords do not match confirm password"
   }
 }

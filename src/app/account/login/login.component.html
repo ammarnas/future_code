@@ -38,7 +38,7 @@
           >
           <mat-icon matSuffix>email</mat-icon>
           @if(email.errors?.['required']){
-            <mat-error>{{ 'validation.required' | translate }}</mat-error>
+            <mat-error>{{ 'validation.requiredMessage' | translate }}</mat-error>
           }
           @if(email.errors?.['minlength']){
             <mat-error>Email must be more then {{email.errors?.['minlength'].requiredLength}} characters
