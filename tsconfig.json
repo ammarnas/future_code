@@ -20,6 +20,7 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "noUnusedLocals": true, // show error if private variable is declared but its value is never read
+    "strictPropertyInitialization": false,
     "lib": [
       "ES2022",
       "dom"

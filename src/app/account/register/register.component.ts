@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
   hide = true;
   hideConfirmPassword = true;
@@ -18,7 +18,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   password = new FormControl<string>('');
 
-  constructor() {
+  ngOnInit() {
     this.registerForm = this.initFrom();
   }
   // Notes:
@@ -38,9 +38,9 @@ export class RegisterComponent {
   //nonNullable: means control not accept null value and when reset reset to init value
   private initFrom() : FormGroup {
     return new FormGroup({
-      userName: new FormControl({value: "test", disabled: false}),
-      email: new FormControl('', {updateOn: "blur"}),
-      mobileNumber: new FormControl('',{nonNullable: false}),
+      userName: new FormControl(''),
+      email: new FormControl(''),
+      mobileNumber: new FormControl(''),
       password: this.password,
       confirmPassword: new FormControl(''),
     });
