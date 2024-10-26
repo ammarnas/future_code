@@ -1,8 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { ApiService } from './api.service';
-import { baseURL } from '../../../environment/environment';
 import { IFilm, IGetFilmResponse } from '../../app.component.models';
 @Injectable({
   providedIn: 'root'

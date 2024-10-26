@@ -2,7 +2,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IFilm } from './app.component.models';
 import { CommonModule } from '@angular/common';
-import { timer } from 'rxjs';
 import { HeaderComponent } from "./header/header.component";
 import { ApiService } from './shared/services/api.service';
 import { TranslationService } from './shared/services/translation.service';

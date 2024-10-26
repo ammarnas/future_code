@@ -1,6 +1,6 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IFilm } from '../app.component.models';
-import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-film-details',
@@ -12,7 +12,7 @@ import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 export class FilmDetailsComponent {
   film!: IFilm;
   @Input('id') filmId: string = ''; // this binding from route
-  constructor(private activatedRoute: ActivatedRoute, private router: Router){}
+  constructor(private router: Router){}
 
 
   getNext(){
