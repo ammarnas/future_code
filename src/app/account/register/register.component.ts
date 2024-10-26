@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -49,12 +49,12 @@ export class RegisterComponent implements OnInit {
 
     // using formBuilder
     this.registerForm = this.formBuilder.group({
-      userName: '',
-      email: '',
-      mobileNumber: '',
-      password: '',
-      // password: this.password, we can use it lke this
-      confirmPassword: '',
+      userName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNumber: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      // password: this.password, we can use it like this
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
