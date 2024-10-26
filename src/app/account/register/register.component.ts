@@ -54,14 +54,17 @@ export class RegisterComponent implements OnInit {
     });
 
     // using formBuilder
-    // this.registerForm = this.formBuilder.group({
-    //   userName: ['', [Validators.required]],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   mobileNumber: ['', [Validators.required]],
-    //   password: ['', [Validators.required, Validators.minLength(6)]],
-    //   // password: this.password, we can use it like this
-    //   confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
-    // });
+    this.registerForm = this.formBuilder.group({
+      userName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNumber: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      // password: this.password, we can use it like this
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+    },
+    {
+      validators: ValidationService.mustMatch('password', 'confirmPassword')
+    });
   }
 
   navigateToLogin(): void {
