@@ -70,6 +70,9 @@
       <div class="alert alert-warning mt-lg-3">
         {{registerForm.value | json}}
       </div>
+      <div class="alert alert-danger mt-lg-3">
+        {{registerForm.get('confirmPassword')?.errors | json}}
+      </div>
     </div>
   </div>
 </div>

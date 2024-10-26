@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidationService } from '../../shared/services/validation.service';
 
 @Component({
   selector: 'app-register',
@@ -47,6 +48,9 @@ export class RegisterComponent implements OnInit {
       confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
       // or like this
       // confirmPassword: new FormControl('', {validators: [Validators.required, Validators.minLength(6)]}),
+    },
+    {
+      validators: ValidationService.mustMatch('password', 'confirmPassword')
     });
 
     // using formBuilder
