@@ -33,14 +33,22 @@ export class LoginComponent {
     this.navigationService.navigateByUrl('/account/register');
     }
 
+  // login(loginForm: NgForm) {
+  //   if(loginForm.valid) {
+  //     const formValue = loginForm.value;
+  //     this.authService.login(formValue.email, formValue.password).subscribe(res => {
+  //       console.log("Login successful:", res);
+  //       // this.navigationService.navigateByUrl('/register');
+  //     });
+  // }
+//}
   login(loginForm: NgForm) {
-    if(loginForm.valid) {
-      const formValue = loginForm.value;
-      this.authService.login(formValue.email, formValue.password).subscribe(res => {
-        console.log("", res);
-        // this.navigationService.navigateByUrl('/register');
-      });
-    }
+    // const formValue = loginForm.value;
+    this.authService.login('emilys', 'emilyspass')
+    .subscribe({        next: (response) => {
+        console.log('Login successful:', response);
+      },
+    });
   }
 
     onPasswordChange(password: string) {

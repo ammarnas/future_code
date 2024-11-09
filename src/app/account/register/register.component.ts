@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidationService } from '../../shared/services/validation.service';
-import { AuthService } from '../../shared/services/auth.service';
+import { FirebaseService } from '../../shared/services/firebase.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   hideConfirmPassword = true;
   navigationService = inject(NavigationService);
   formBuilder = inject(FormBuilder);
-  authService = inject(AuthService);
+  firebaseService = inject(FirebaseService);
   registerForm: FormGroup;
   password = new FormControl<string>('');
 
@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     const formValue = this.registerForm.value;
-    this.authService.singUp(formValue.email, formValue.password).subscribe(res => {
+    this.firebaseService.register(formValue.email, formValue.password).subscribe(res => {
       console.log(res);
     })
   }
