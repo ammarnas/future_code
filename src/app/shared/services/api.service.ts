@@ -16,4 +16,8 @@ export class ApiService {
       // .pipe(
       //   catchError(this.handleErrorService.logErrorResponse));
   }
+
+  postRequest(url: string, body: any, options?: any) : Observable<ArrayBuffer> {
+    return this.http.post(url, body, options)
+  }
 }
