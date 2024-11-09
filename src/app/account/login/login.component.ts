@@ -3,6 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { NgForm } from '@angular/forms';
 import { ILoginDto } from '../models/IlooginDto';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,27 +22,28 @@ export class LoginComponent {
     // };
   // second way to declare object
     loginDto: ILoginDto = {
-      email: "test@me.com",
-      password: "1234567"
+      username: "kevinryan",
+      password: "kev02937@"
     };
 
   private navigationService = inject(NavigationService);
+  authService = inject(AuthService);
 
   navigateToRegister() {
     this.navigationService.navigateByUrl('/account/register');
     }
 
-  login(loginForm: NgForm, event: Event) {
-    // loginForm.onSubmit(event);
-    // console.log('LoginForm login', loginForm)
+  login(loginForm: NgForm) {
+    if(loginForm.valid) {
+      const formValue = loginForm.value;
+      this.authService.login(formValue.email, formValue.password).subscribe(res => {
+        console.log("", res);
+        // this.navigationService.navigateByUrl('/register');
+      });
     }
-
-  submit(loginForm: NgForm) {
-    console.log('LoginDto', this.loginDto);
-    console.log('LoginForm submit', loginForm)
   }
 
-  onPasswordChange(password: string) {
+    onPasswordChange(password: string) {
     console.log("password change", password);
   }
 }

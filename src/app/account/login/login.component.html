@@ -21,27 +21,25 @@
           [(ngModel)]: this two way data binding update in model
         -->
           {{ loginForm.value | json }}
-      <form class="row" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+      <form class="row" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <mat-form-field appearance="outline" class="col-12 email-control">
-          <mat-label>Email</mat-label>
+          <mat-label>Username</mat-label>
           <input
             required
             minlength="5"
             maxlength="15"
-            email
-            pattern=".*@.*\.com$"
             matInput
-            name="email"
+            name="username"
             #email="ngModel"
-            [(ngModel)]="loginDto.email"
+            [(ngModel)]="loginDto.username"
             placeholder="Enter your Email"
           >
-          <mat-icon matSuffix>email</mat-icon>
+          <mat-icon matSuffix>user</mat-icon>
           @if(email.errors?.['required']){
             <mat-error>{{ 'validation.requiredMessage' | translate }}</mat-error>
           }
           @if(email.errors?.['minlength']){
-            <mat-error>Email must be more then {{email.errors?.['minlength'].requiredLength}} characters
+            <mat-error>Username must be more then {{email.errors?.['minlength'].requiredLength}} characters
               but you insert only {{ email.errors?.['minlength'].actualLength }}
             </mat-error>
           }
@@ -105,7 +103,6 @@
             mat-flat-button
             color="primary"
             class="w-100"
-            (click)="login(loginForm, $event)"
             [disabled]="loginForm.invalid"
           >
             Login
