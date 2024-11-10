@@ -46,7 +46,7 @@ export class LoginComponent {
       const formValue = loginForm.value;
       this.authService.login(formValue.email, formValue.Password)
       .subscribe({        next: (response) => {
-          console.log('Login successful:', response);
+          this.navigationService.navigateByUrl('/secure');
         },
       });
     }

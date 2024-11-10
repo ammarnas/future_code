@@ -6,6 +6,7 @@ import { FilmDetailsComponent } from './film-details/film-details.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
+import { SecureComponent } from './secure/secure.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,9 @@ export const routes: Routes = [
   {
     path: 'film-list/:id',
     component: FilmDetailsComponent
+  },  {
+    path: 'secure',
+    component: SecureComponent
   },
   {
     path: 'account',
