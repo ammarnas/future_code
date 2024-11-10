@@ -7,7 +7,7 @@ import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { SecureComponent } from './secure/secure.component';
-import { AuthGuard } from './shared/guards/auth.guard';
+import { authTwoGuard } from './shared/guards/auth-two.guard';
 
 export const routes: Routes = [
   {
@@ -28,7 +28,8 @@ export const routes: Routes = [
   },  {
     path: 'secure',
     component: SecureComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
+    canActivate: [authTwoGuard],
   },
   {
     path: 'account',
