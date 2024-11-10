@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { singUp } from '../../firebase-url.local';
+import { singIn, singUp } from '../../firebase-url.local';
 import { ApiService } from './api.service';
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,12 @@ export class FirebaseService {
   register(email: string, password: string): Observable<any> {
     return this.apiService.postRequest(singUp, {
       email, password, 'returnSecureToken': true
+    }, { 'Content-Type': 'application/json' });
+  }
+
+  login(email: string, password: string): Observable<any> {
+    return this.apiService.postRequest(singIn, {
+      email, 'password': password, 'returnSecureToken': true
     }, { 'Content-Type': 'application/json' });
   }
 }

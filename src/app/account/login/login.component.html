@@ -23,15 +23,17 @@
           {{ loginForm.value | json }}
       <form class="row" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <mat-form-field appearance="outline" class="col-12 email-control">
-          <mat-label>Username</mat-label>
+          <mat-label>Email</mat-label>
           <input
             required
             minlength="5"
             maxlength="15"
             matInput
-            name="username"
+            name="email"
+            email
+            pattern=".*@.*\.com$"
             #email="ngModel"
-            [(ngModel)]="loginDto.username"
+            [(ngModel)]="loginDto.email"
             placeholder="Enter your Email"
           >
           <mat-icon matSuffix>user</mat-icon>
@@ -39,7 +41,7 @@
             <mat-error>{{ 'validation.requiredMessage' | translate }}</mat-error>
           }
           @if(email.errors?.['minlength']){
-            <mat-error>Username must be more then {{email.errors?.['minlength'].requiredLength}} characters
+            <mat-error>Email must be more then {{email.errors?.['minlength'].requiredLength}} characters
               but you insert only {{ email.errors?.['minlength'].actualLength }}
             </mat-error>
           }

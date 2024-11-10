@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { NavigationService } from '../../shared/services/navigation.service';
 import { NgForm } from '@angular/forms';
+import { FirebaseService } from '../../shared/services/firebase.service';
 import { ILoginDto } from '../models/IlooginDto';
-import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +21,12 @@ export class LoginComponent {
     //   password: ""
     // };
   // second way to declare object
-    loginDto: ILoginDto = {
-      username: "kevinryan",
-      password: "kev02937@"
-    };
-
+  loginDto: ILoginDto = {
+    email: "test@me.com",
+    password: "test@me.com"
+  };
   private navigationService = inject(NavigationService);
-  authService = inject(AuthService);
+  authService = inject(FirebaseService);
 
   navigateToRegister() {
     this.navigationService.navigateByUrl('/account/register');
@@ -43,12 +42,14 @@ export class LoginComponent {
   // }
 //}
   login(loginForm: NgForm) {
-    // const formValue = loginForm.value;
-    this.authService.login('emilys', 'emilyspass')
-    .subscribe({        next: (response) => {
-        console.log('Login successful:', response);
-      },
-    });
+    if(loginForm.valid) {
+      const formValue = loginForm.value;
+      this.authService.login(formValue.email, formValue.Password)
+      .subscribe({        next: (response) => {
+          console.log('Login successful:', response);
+        },
+      });
+    }
   }
 
     onPasswordChange(password: string) {
