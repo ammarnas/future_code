@@ -7,6 +7,7 @@ import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { SecureComponent } from './secure/secure.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -26,7 +27,8 @@ export const routes: Routes = [
     component: FilmDetailsComponent
   },  {
     path: 'secure',
-    component: SecureComponent
+    component: SecureComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'account',
