@@ -6,8 +6,6 @@ import { FilmDetailsComponent } from './film-details/film-details.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
-import { SecureComponent } from './secure/secure.component';
-import { authTwoGuard } from './shared/guards/auth-two.guard';
 
 export const routes: Routes = [
   {
@@ -27,9 +25,10 @@ export const routes: Routes = [
     component: FilmDetailsComponent
   },  {
     path: 'secure',
-    component: SecureComponent,
+    // component: SecureComponent,
+    loadComponent: () => import('./secure/secure.component').then(m => m.SecureComponent)
     // canActivate: [AuthGuard],
-    canActivate: [authTwoGuard],
+    //canActivate: [authTwoGuard],
   },
   {
     path: 'account',
