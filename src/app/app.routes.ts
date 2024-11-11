@@ -6,7 +6,7 @@ import { RegisterComponent } from './modules/account/register/register.component
 import { FilmDetailsComponent } from './modules/film-list/film-details/film-details.component';
 import { FilmListComponent } from './modules/film-list/film-list.component';
 import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
-import { CanLoadFnGuard } from './shared/guards/canLoad.guard';
+import { canMatchGuard } from './shared/guards/can-match.guard';
 
 
 export const routes: Routes = [
@@ -25,14 +25,14 @@ export const routes: Routes = [
   {
     path: 'film-list/:id',
     component: FilmDetailsComponent
-  },  {
+  },
+  // note:
+  // canActivate load the component although you can't navigate to it
+  // canMatch don't load the component if you don't can navigate
+  {
     path: 'secure',
-    // component: SecureComponent,
     loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule),
-    canLoad: [CanLoadFnGuard]
-    // loadComponent: () => import('./secure/secure.component').then(c => c.SecureComponent)
-    // canActivate: [AuthGuard],
-    //canActivate: [authTwoGuard],
+    canMatch: [canMatchGuard]
   },
   {
     path: 'account',
