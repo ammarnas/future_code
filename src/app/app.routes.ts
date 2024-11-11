@@ -6,6 +6,7 @@ import { RegisterComponent } from './modules/account/register/register.component
 import { FilmDetailsComponent } from './modules/film-list/film-details/film-details.component';
 import { FilmListComponent } from './modules/film-list/film-list.component';
 import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
+import { CanLoadGuard } from './shared/guards/canLoad.guard';
 
 
 export const routes: Routes = [
@@ -27,7 +28,8 @@ export const routes: Routes = [
   },  {
     path: 'secure',
     // component: SecureComponent,
-    loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule)
+    loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule),
+    canLoad: [CanLoadGuard]
     // loadComponent: () => import('./secure/secure.component').then(c => c.SecureComponent)
     // canActivate: [AuthGuard],
     //canActivate: [authTwoGuard],
