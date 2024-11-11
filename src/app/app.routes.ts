@@ -27,7 +27,8 @@ export const routes: Routes = [
   },  {
     path: 'secure',
     // component: SecureComponent,
-    loadComponent: () => import('./secure/secure.component').then(m => m.SecureComponent)
+    loadChildren: () => import('./secure/secure.module').then(m => m.SecureModule)
+    // loadComponent: () => import('./secure/secure.component').then(c => c.SecureComponent)
     // canActivate: [AuthGuard],
     //canActivate: [authTwoGuard],
   },
