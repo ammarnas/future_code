@@ -2,9 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IFilm } from './app.component.models';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "./header/header.component";
 import { ApiService } from './shared/services/api.service';
 import { TranslationService } from './shared/services/translation.service';
+import { HeaderComponent } from './modules/layout/header/header.component';
 
 @Component({
     selector: 'app-root',
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     filmName: 'Angular Core film!',
     title: 'Angular For Beginners In Arabic',
   };
-
+  
   translationService = inject(TranslationService);
 
   onLogoClick(): void{

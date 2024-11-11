@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { NavigationService } from '../../shared/services/navigation.service';
 import { NgForm } from '@angular/forms';
-import { FirebaseService } from '../../shared/services/firebase.service';
 import { ILoginDto } from '../models/IlooginDto';
+import { FirebaseService } from '../../../shared/services/firebase.service';
+import { NavigationService } from '../../../shared/services/navigation.service';
+import { SharedModule } from '../../../shared/shared.module';
 
 @Component({
   selector: 'app-login',

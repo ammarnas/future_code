@@ -1,9 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { NavigationService } from '../../shared/services/navigation.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ValidationService } from '../../shared/services/validation.service';
-import { FirebaseService } from '../../shared/services/firebase.service';
+import { FirebaseService } from '../../../shared/services/firebase.service';
+import { NavigationService } from '../../../shared/services/navigation.service';
+import { ValidationService } from '../../../shared/services/validation.service';
+import { SharedModule } from '../../../shared/shared.module';
+
 
 @Component({
   selector: 'app-register',

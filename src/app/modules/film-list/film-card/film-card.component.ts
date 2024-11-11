@@ -1,13 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CategoryType, IFilm } from '../app.component.models';
-import { NgClass, NgStyle} from '@angular/common';
-import { ChildViewComponent } from '../child-view/child-view.component';
 import { Router } from '@angular/router';
+import { IFilm, CategoryType } from '../../../app.component.models';
 
 @Component({
   selector: 'app-film-card',
   standalone: true,
-  imports: [NgClass, NgStyle, ChildViewComponent],
+  imports: [],
   templateUrl: './film-card.component.html',
   styleUrl: './film-card.component.scss'
 })

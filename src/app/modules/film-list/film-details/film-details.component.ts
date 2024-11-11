@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IFilm } from '../app.component.models';
 import { Router } from '@angular/router';
+import { IFilm } from '../../../app.component.models';
 
 @Component({
   selector: 'app-film-details',

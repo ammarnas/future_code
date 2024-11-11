@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { IFilm } from '../app.component.models';
-import { FilmCardComponent } from "../film-card/film-card.component";
-import { FilmService } from '../shared/services/film.service';
-import { SharedModule } from '../shared/shared.module';
+import { IFilm } from '../../app.component.models';
+import { FilmService } from '../../shared/services/film.service';
+import { SharedModule } from '../../shared/shared.module';
+import { FilmCardComponent } from './film-card/film-card.component';
+
 
 @Component({
   selector: 'app-film-list',

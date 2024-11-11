@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FilmListComponent } from './film-list/film-list.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FilmDetailsComponent } from './film-details/film-details.component';
-import { AccountComponent } from './account/account.component';
-import { LoginComponent } from './account/login/login.component';
-import { RegisterComponent } from './account/register/register.component';
+import { AccountComponent } from './modules/account/account.component';
+import { LoginComponent } from './modules/account/login/login.component';
+import { RegisterComponent } from './modules/account/register/register.component';
+import { FilmDetailsComponent } from './modules/film-list/film-details/film-details.component';
+import { FilmListComponent } from './modules/film-list/film-list.component';
+import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
+
 
 export const routes: Routes = [
   {
