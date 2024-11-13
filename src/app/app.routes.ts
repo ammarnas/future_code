@@ -7,6 +7,7 @@ import { FilmDetailsComponent } from './modules/film-list/film-details/film-deta
 import { FilmListComponent } from './modules/film-list/film-list.component';
 import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
 import { canMatchGuard } from './shared/guards/can-match.guard';
+import { DashboardComponent } from './secure/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: 'film-list/:id',
     component: FilmDetailsComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
   },
   // note:
   // canActivate load the component although you can't navigate to it

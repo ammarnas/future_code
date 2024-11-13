@@ -1,1 +1,48 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <mat-toolbar color="primary" class="header">
+    <span>Dashboard</span>
+  </mat-toolbar>
+
+  <mat-drawer-container class="sidenav-container">
+    <mat-drawer mode="side" opened>
+      <mat-nav-list>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dashboard
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLink="/analytics" routerLinkActive="active-link">
+              Analytics
+            </a>
+            <a mat-list-item routerLink="/reports" routerLinkActive="active-link">
+              Reports
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Settings
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item routerLink="/profile" routerLinkActive="active-link">
+              Profile
+            </a>
+            <a mat-list-item routerLink="/preferences" routerLinkActive="active-link">
+              Preferences
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
