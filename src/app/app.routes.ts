@@ -1,35 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AccountComponent } from './modules/account/account.component';
-import { LoginComponent } from './modules/account/login/login.component';
-import { RegisterComponent } from './modules/account/register/register.component';
-import { FilmDetailsComponent } from './modules/film-list/film-details/film-details.component';
-import { FilmListComponent } from './modules/film-list/film-list.component';
 import { PageNotFoundComponent } from './modules/layout/page-not-found/page-not-found.component';
 import { canMatchGuard } from './shared/guards/can-match.guard';
-import { DashboardComponent } from './secure/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'film-list',
-    component: FilmListComponent
-  },
-  {
-    path: 'film',
-    component: FilmDetailsComponent
-  },
-  {
-    path: 'film-list/:id',
-    component: FilmDetailsComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'public',
+    loadChildren: () => import('./public/public.module').then(m => m.PublicModule),
   },
   // note:
   // canActivate load the component although you can't navigate to it
@@ -41,18 +18,13 @@ export const routes: Routes = [
   },
   {
     path: 'account',
-    component: AccountComponent,
-    children: [
-      {path: 'login', component: LoginComponent },
-      {path: 'register', component: RegisterComponent },
-      {path: '', redirectTo: '/account/login', pathMatch: 'full'}
-    ]
+    loadChildren: () => import('./modules/account/account.module').then(m => m.AccountModule),
   },
   {
     //Redirect routes
     path: '',
     pathMatch: 'full',
-    redirectTo: "home"
+    redirectTo: "/public"
   },
   {
     //Wildcard notation Pages

@@ -45,8 +45,10 @@ export class LoginComponent {
     if(loginForm.valid) {
       const formValue = loginForm.value;
       this.authService.login(formValue.email, formValue.Password)
-      .subscribe({        next: (response) => {
+      .subscribe({
+        next: (response) => {
           this.navigationService.navigateByUrl('/secure');
+          localStorage.setItem("token",response.token);
         },
       });
     }
